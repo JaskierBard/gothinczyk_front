@@ -1,0 +1,47 @@
+.eq{
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-left: 1200px;
+    font-size: 0;
+    width: 400px;
+    height: 480px;
+}
+
+.ceil{
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.808);
+    border: 1px solid rgb(143, 143, 143)
+
+}
+
+.eq>div>a{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(177, 177, 177);
+    bottom:0px;
+    right: 2px;
+    
+}
+
+.ceil:hover{
+    border: 2px solid blue;
+    cursor: pointer;    
+}
+
+.ceil:active{
+    background-color: rgba(124, 4, 4, 0.808);
+
+}
+
+.eq>div>img{
+    box-sizing: border-box;
+    margin: 0;
+    padding:5px 5px 5px 5px;
+    width: 70px;
+    height: 80px;
+}
