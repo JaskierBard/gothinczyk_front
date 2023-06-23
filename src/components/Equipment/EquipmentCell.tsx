@@ -4,6 +4,7 @@ import './Equipment.css'
 interface Props {
   path: any
   type: string
+  ceil?: number
 }
 
 export const EquipmentCell = (props:Props) => {
@@ -12,7 +13,7 @@ export const EquipmentCell = (props:Props) => {
 
   return (
     <div className='ceil'>
-      <img src={'./images/'+props.type+ '/' + props.path + '.webp'} alt="" />
+      <img src={'./images/'+ props.type + '/' + props.path + '.webp'} alt="" />
     </div>
   );
 }

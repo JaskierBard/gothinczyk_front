@@ -3,7 +3,6 @@ import './Equipment.css'
 import { EquipmentCell } from './EquipmentCell';
 import { getArmors, getWeapons } from '../../functions/getEquipment';
 
-const ceils = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11','12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22','23', '24', '25', '26', '27', '28', '29', '30',]
 
 
 export const Equipment = () => {
@@ -13,6 +12,8 @@ export const Equipment = () => {
 
   ]);
   const [weapon, setWeapon] = useState<any>([])
+  const [ceils, setCeils] = useState<any>()
+
 
 
 
@@ -20,10 +21,16 @@ export const Equipment = () => {
     const AsyncFunction  = async () => {
     setWeapon(await getWeapons())
     setArmor(await getArmors())
-  
-  AsyncFunction()
     }
+    AsyncFunction()
 },[]);
+
+useEffect(() => {
+  const AsyncFunction  = async () => {
+  setCeils(30 - ((armor.length) + (weapon.length)))
+  }
+  AsyncFunction()
+},[armor, weapon]);
 
   return (
     <div className='eq'>
@@ -31,9 +38,12 @@ export const Equipment = () => {
             <EquipmentCell key={item.id} path={item.img} type='weapon'/>
         ))}
         {armor.map((item: any) => (
-            <EquipmentCell key={item.id} path={item.img} type='armor'/>
+            <EquipmentCell key={item.id} path={item.img} type='armor' ceil={ceils}/>
         ))}
         
+        {Array.from({length:ceils}, (value, index) => (
+          <div className='ceil' key={index}></div>
+        ) )}
         
     </div>
   );
