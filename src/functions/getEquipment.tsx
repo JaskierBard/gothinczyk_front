@@ -21,3 +21,13 @@ export const getWeapons = async () => {
     }
  };
 
+ export const getAlchemy = async () => {
+     try {
+      const res = await fetch(`http://localhost:3001/player/equipment`);
+     const data = await res.json()
+    return data.alchemy;
+    } catch (err) {
+        console.log( err)
+    }
+ };
+

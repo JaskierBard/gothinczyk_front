@@ -45,3 +45,30 @@
     width: 70px;
     height: 80px;
 }
+
+.showItem {
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.808);
+    border: 1px solid rgb(143, 143, 143);
+    font-size: 0;
+    width: 400px;
+    height: 150px;
+}
+
+.showItem > a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(196, 196, 196);
+    font-size: 18px;
+    position: absolute;
+    top:2px;
+    left: 140px;
+}
+.showItem > img {
+position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 10px;
+    top: 25px;
+}
