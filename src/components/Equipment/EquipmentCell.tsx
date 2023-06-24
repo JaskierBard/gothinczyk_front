@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Equipment.css'
+import { EquipmentDetail } from './EquipmentDetail';
 
 interface Props {
   path: any
@@ -8,12 +9,26 @@ interface Props {
 }
 
 export const EquipmentCell = (props:Props) => {
-// policzyć ile elementów i dodać tyle żeby było 30
-//baza danych do przechowywaia pozycji , wyrzuconych oczek i kolejności
+  const [details, setDetails] = useState<any>([]);
+
+
+  const Enter = () => {
+    setDetails(props.path)
+    console.log(details)
+
+}
+
+const Leave = () => {
+    console.log('Leave')
+}
+
+
 
   return (
     <div className='ceil'>
-      <img src={'./images/'+ props.type + '/' + props.path + '.webp'} alt="" />
+      <img src={'./images/'+ props.type + '/' + props.path + '.webp'} alt="" onMouseEnter={Enter}/>
+      
     </div>
+    
   );
 }
