@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Equipment.css'
-import { EquipmentDetail } from './EquipmentDetail';
 
 interface Props {
   path: any
@@ -9,26 +8,21 @@ interface Props {
 }
 
 export const EquipmentCell = (props:Props) => {
-  const [details, setDetails] = useState<any>([]);
-
 
   const Enter = () => {
-    setDetails(props.path)
-    console.log(details)
+    const eqhtml:any = document.querySelector(`.img`);
+    eqhtml.src = './images/'+ props.type + '/' + props.path + '.webp';
+    eqhtml.style.opacity = 1;
+  }
 
-}
-
-const Leave = () => {
-    console.log('Leave')
-}
-
-
+  const Leave = () => {
+    const eqhtml:any = document.querySelector(`.img`);
+    eqhtml.style.opacity = 0;
+  }
 
   return (
     <div className='ceil'>
-      <img src={'./images/'+ props.type + '/' + props.path + '.webp'} alt="" onMouseEnter={Enter}/>
-      
+      <img src={'./images/'+ props.type + '/' + props.path + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
     </div>
-    
   );
 }
