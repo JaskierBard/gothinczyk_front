@@ -57,7 +57,7 @@
     height: 150px;
 }
 
-.showItem > a {
+.showItem > p {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(196, 196, 196);
     font-size: 18px;

@@ -28,18 +28,19 @@ export const Equipment = () => {
   return (
     <div className='eq' >
       {weapon.map((item: any) => (
-        <EquipmentCell key={item.id} path={item.img} type='weapon' />
+        <EquipmentCell key={item.id} path={item} type='weapon'  />
       ))}
       {armor.map((item: any) => (
-        <EquipmentCell key={item.id} path={item.img} type='armor'/>
+        <EquipmentCell key={item.id} path={item} type='armor'/>
       ))}
       {alchemy.map((item: any) => (
-        <EquipmentCell key={item.id} path={item.img} type='herbsAndpotions' ceil={ceils}/>
+        <EquipmentCell key={item.id} path={item} type='herbsAndpotions' ceil={ceils}/>
       ))}
       {Array.from({length:ceils}, (value, index) => (
         <div className='ceil' key={index}></div>
       ))}
       <div className='showItem' >
+        <p className='name'></p>
         <img className={'img'} style={{opacity:0}} />  
       </div>
     </div>
