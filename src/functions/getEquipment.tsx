@@ -31,3 +31,23 @@ export const getWeapons = async () => {
     }
  };
 
+ export const getMagic = async () => {
+    try {
+     const res = await fetch(`http://localhost:3001/player/equipment`);
+    const data = await res.json()
+   return data.magic;
+   } catch (err) {
+       console.log( err)
+   }
+};
+
+export const getOther = async () => {
+    try {
+     const res = await fetch(`http://localhost:3001/player/equipment`);
+    const data = await res.json()
+   return data.other;
+   } catch (err) {
+       console.log( err)
+   }
+};
+
