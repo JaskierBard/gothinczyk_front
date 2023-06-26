@@ -1,61 +1,87 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Equipment.css'
+import { getAll } from '../../functions/getEquipment';
+import { Spinner } from './common/Spinner/Spinner';
 import { EquipmentCell } from './EquipmentCell';
-import { getAlchemy, getArmors, getMagic, getOther, getWeapons } from '../../functions/getEquipment';
 
 export const Equipment = () => {
-  const [armor, setArmor] = useState<any>([]);
-  const [weapon, setWeapon] = useState<any>([])
-  const [alchemy, setAlchemy] = useState<any>([])
-  const [magic, setMagic] = useState<any>([])
-  const [other, setOther] = useState<any>([])
-  const [ceils, setCeils] = useState<any>()
+  const [items, setItems] = useState<any>(null)
+  const [ceils, setCeils] = useState<any>(0)
 
   useEffect(() => {
     const AsyncFunction  = async () => {
-      setWeapon(await getWeapons())
-      setArmor(await getArmors())
-      setAlchemy(await getAlchemy())
-      setMagic(await getMagic())
-      setOther(await getOther())
-
+      setItems(null)
+      setItems(await getAll())  
     }
     AsyncFunction()
   },[]);
 
   useEffect(() => {
     const AsyncFunction  = async () => {
-      setCeils(30 - ((armor.length) + (weapon.length) + (alchemy.length) + (magic.length) + (other.length)))
+      if (items !== null) {
+        const Array = [items[0].length, items[1].length, items[2].length, items[3].length, items[4].length]
+        let count = 0;
+
+        Array.forEach(element => {
+          if (element === null) {
+            element = 0;
+          }
+          if (count + element > 30) {
+            // let name = element.key
+            element = 30 - count
+          }
+          count += element;
+        });
+        // console.log(count)
+        setCeils(30 - count)
+        
+      } 
     }
     AsyncFunction()
-  },[armor, weapon, alchemy, magic, other]);
+  },[items]);
 
+
+  if (items === null) {
+    return (
+      <><Spinner/>
+      <div className='eq'>
+        {Array.from({length:ceils}, (value, index) => (
+          <div className='ceil' key={index}>
+          </div>
+      ))}
+      <div className='showItem' >
+        <p className='name'></p>
+        <p className='price'></p>
+        <img className={'img'} style={{opacity:0, width:100, height: 100,}} alt='img' />  
+      </div>
+      </div>
+      </>
+
+    );
+}else{
   return (
     <div className='eq' >
-      {weapon.map((item: any) => (
-        <EquipmentCell key={item.id} path={item} type='weapon'  />
-      ))}
-      {armor.map((item: any) => (
-        <EquipmentCell key={item.id} path={item} type='armor'/>
-      ))}
-      {alchemy.map((item: any) => (
-        <EquipmentCell key={item.id} path={item} type='herbsAndpotions' ceil={ceils}/>
-      ))}
-      {magic.map((item: any) => (
-        <EquipmentCell key={item.id} path={item} type='magic' ceil={ceils}/>
-      ))}
-      {other.map((item: any) => (
-        <EquipmentCell key={item.id} path={item} type='rest' ceil={ceils}/>
-      ))}
+      {
+        items.map((element1: any) => (
+          Object.values(element1).map((item: any) => (
+              item.map((element2: any) => (
+                <EquipmentCell key={element2.id} path={element2} type={Object.keys(element1)[0]}/>
+              ))
+          ))
+        ))
+      }
       {Array.from({length:ceils}, (value, index) => (
         <div className='ceil' key={index}></div>
       ))}
       <div className='showItem' >
         <p className='name'></p>
         <p className='price'></p>
-        <img className={'img'} style={{opacity:0, width:100, height: 100,}} />  
+        <img className={'img'} style={{opacity:0, width:100, height: 100,}} alt='img' />  
       </div>
     </div>
   );
+}
+
+  
 }
 
