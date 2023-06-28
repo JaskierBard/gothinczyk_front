@@ -7,6 +7,8 @@ import { EquipmentCell } from './EquipmentCell';
 export const Equipment = () => {
   const [items, setItems] = useState<any>(null)
   const [ceils, setCeils] = useState<any>(0)
+  const [value, setValue] = useState<number>(0)
+  const [current, setCurrent] = useState<any>()
 
   useEffect(() => {
     const AsyncFunction  = async () => {
@@ -17,34 +19,55 @@ export const Equipment = () => {
   },[]);
 
   useEffect(() => {
-    const AsyncFunction  = async () => {
-      if (items !== null) {
-        const Array = [items[0].length, items[1].length, items[2].length, items[3].length, items[4].length]
-        let count = 0;
+    Pagination(value)
+  },[items, value]);
 
-        Array.forEach(element => {
-          if (element === null) {
-            element = 0;
-          }
-          if (count + element > 30) {
-            // let name = element.key
-            element = 30 - count
-          }
-          count += element;
-        });
-        // console.log(count)
-        setCeils(30 - count)
-        
-      } 
+  const Pagination  = async (value: number) => {
+    let counter = 30 + value;
+    let Cutcounter = value;
+
+    const Array:any = []
+    try {
+      items.forEach((element1: any) => (
+        Object.values(element1).forEach((item: any) => {
+        item.map((element2: any) => {
+            if (counter > 0 && Cutcounter <= 0) {
+              Array.push(element2)
+            }
+            counter--
+            Cutcounter--
+        })
+        }
+        )
+      ))
+    } catch (err) {
+    
     }
-    AsyncFunction()
-  },[items]);
-
+    
+    setCeils(30 - Array.length)
+    setCurrent(Array)
+  }
+  
+  const MouseWheelDetector  = async (event:any) => {
+    if (event.deltaY < 0) {
+      if (value < 5) {
+        setValue(value)
+      } else {
+        setValue((prevValue) => prevValue -5)
+      }
+    }else {
+      if (value < (current.length - 15)) {
+        setValue((prevValue) => prevValue +5)
+      } else {
+        setValue(value)
+      }
+    }
+  }
 
   if (items === null) {
     return (
       <><Spinner/>
-      <div className='eq'>
+      <div className='eq' >
         {Array.from({length:ceils}, (value, index) => (
           <div className='ceil' key={index}>
           </div>
@@ -56,18 +79,13 @@ export const Equipment = () => {
       </div>
       </div>
       </>
-
     );
-}else{
-  return (
-    <div className='eq' >
-      {
-        items.map((element1: any) => (
-          Object.values(element1).map((item: any) => (
-              item.map((element2: any) => (
-                <EquipmentCell key={element2.id} path={element2} type={Object.keys(element1)[0]}/>
-              ))
-          ))
+  }else{
+    return (
+      <div className='eq' onWheel={MouseWheelDetector}>
+        {
+          current.map((element2: any) => (
+          <EquipmentCell key={element2.id} path={element2} type={element2.type}/>
         ))
       }
       {Array.from({length:ceils}, (value, index) => (
@@ -81,7 +99,5 @@ export const Equipment = () => {
     </div>
   );
 }
-
-  
 }
 
