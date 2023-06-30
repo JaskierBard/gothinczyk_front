@@ -2,6 +2,7 @@ export const getAll = async () => {
     try {
         const res = await fetch(`http://localhost:3001/player/equipment`)
         const data = await res.json()
+        // console.log(data)
         return [{'weapon': data.weapon}, {'armor' : data.armor}, {'magic' : data.magic},{'alchemy' : data.alchemy}, {'other' : data.other}]
 
     } catch (err) {

@@ -53,15 +53,30 @@ return (
   <div className='ceil'>
     {(() => {
     if (weapon.includes(props.type)) {
-      return <img src={'./images/weapon/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      return <>
+        <img src={'./images/weapon/' + props.path.img + '.webp'}  alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+        <p className='quantity'>{props.path.quantity}</p>
+      </>
     } else if (armor.includes(props.type)){
-      return <img src={'./images/armor/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      return <>
+      <img src={'./images/armor/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      <p className='quantity'>{props.path.quantity}</p>
+    </>
     } else if (magic.includes(props.type)){
-      return <img src={'./images/magic/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      return <>
+      <img src={'./images/magic/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      <p className='quantity'>{props.path.quantity}</p>
+    </>
     } else if (alchemy.includes(props.type)){
-      return <img src={'./images/alchemy/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      return <>
+      <img src={'./images/alchemy/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      <p className='quantity'>{props.path.quantity}</p>
+    </>
     } else if (other.includes(props.type)){
-      return <img src={'./images/other/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      return <>
+      <img src={'./images/other/' + props.path.img + '.webp'} alt="" onMouseEnter={Enter} onMouseLeave={Leave}/>
+      <p className='quantity'>{props.path.quantity}</p>
+    </>
     }
   })()}
   </div>

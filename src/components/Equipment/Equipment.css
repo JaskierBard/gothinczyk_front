@@ -22,6 +22,14 @@
 
 }
 
+.quantity{
+    color: rgb(156, 156, 156);
+    font-size: 15px;
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+}
+
 .eq>div>a{
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
@@ -92,3 +100,4 @@
     top: 35px;
     
 }
+

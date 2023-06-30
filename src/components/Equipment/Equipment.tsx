@@ -30,13 +30,16 @@ export const Equipment = () => {
     try {
       items.forEach((element1: any) => (
         Object.values(element1).forEach((item: any) => {
-        item.map((element2: any) => {
-            if (counter > 0 && Cutcounter <= 0) {
-              Array.push(element2)
-            }
-            counter--
-            Cutcounter--
-        })
+          if (item !== undefined) {
+            item.forEach((element2: any) => {
+              if (counter > 0 && Cutcounter <= 0) {
+                Array.push(element2)
+              }
+              counter--
+              Cutcounter--
+          })
+          }
+        
         }
         )
       ))
