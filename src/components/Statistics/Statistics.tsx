@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import './Statistics.css'
+import { getStats } from '../../functions/getStatistic';
 
 
 export const Statistics = () => {
-//   const [items, setItems] = useState<any>(null)
+  const [stats, setStats] = useState<any>(null)
 
   useEffect(() => {
+    const AsyncFunction  = async () => {
+        setStats(null)
+        setStats(await getStats())  
+      }
+      AsyncFunction()
 
   },[]);
 
+    if (stats) {
     return <>
-    <div className='stats'>
-        <div className='stats_bgc'>
-        </div>
+            <div className='stats'>
+            <div className='stats_bgc'>
+         </div>
 
         <div className='character'>
             <h2>POSTAĆ</h2>
@@ -25,10 +32,10 @@ export const Statistics = () => {
                 </div>
                 <div className='values'>
                     <p>Poziom 1</p> 
-                    <p>Krąg 1</p>
-                    <p>0</p>
+                    <p>Krąg {stats.magic_circle}</p>
+                    <p>{stats.experience}</p>
                     <p>1</p>
-                    <p>1</p>
+                    <p>{stats.learning_points}</p>
                 </div>
         </div>
         <div className='attributes'>
@@ -40,10 +47,10 @@ export const Statistics = () => {
                 <p>Punkty trafień</p>
             </div>
             <div className='values'>
-                <p>0</p>
-                <p>1</p>
-                <p>10</p>
-                <p>100</p>
+                <p>{stats.strength}</p>
+                <p>{stats.dexterity}</p>
+                <p>{stats.mana}</p>
+                <p>{stats.hitpoints}</p>
             </div>
         </div>
         <div className='protection'>
@@ -97,14 +104,17 @@ export const Statistics = () => {
                 <p>-</p>
             </div>
             <div className='percent'>
-                <p>33%</p>
-                <p>45%</p>
-                <p>56%</p>
-                <p>10%</p>
+                <p>{stats.one_handed}%</p>
+                <p>{stats.two_handed}%</p>
+                <p>{stats.bow}%</p>
+                <p>{stats.crossbow}%</p>
             </div>
     </div>
     </div>
     </>
+    } else {
+        return null
+    }
   
 
  
