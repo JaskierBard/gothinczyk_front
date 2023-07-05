@@ -8,7 +8,7 @@ interface Props {
 }
 
 const weapon = ['one_handed two_handed', 'one_handed', 'two_handed', 'bow', 'ammunition'];
-const armor = ['armor'];
+const armor = ['armor', 'belt'];
 const magic = ['scroll'];
 const alchemy = ['herb', 'alkohol', 'mana mixture', 'heal mixture'];
 const other = ['junk'];

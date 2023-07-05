@@ -14,6 +14,8 @@ export const Equipment = () => {
     const AsyncFunction  = async () => {
       setItems(null)
       setItems(await getAll())  
+      console.log(await getAll())  
+
     }
     AsyncFunction()
   },[]);
