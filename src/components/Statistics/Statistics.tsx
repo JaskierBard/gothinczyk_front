@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Statistics.css'
 import { getStats } from '../../functions/getStatistic';
+import { checkLevel } from '../../functions/checkLevel';
 
 
 export const Statistics = () => {
@@ -10,10 +11,28 @@ export const Statistics = () => {
     const AsyncFunction  = async () => {
         setStats(null)
         setStats(await getStats())  
+        if (stats) {
+        console.log(await checkLevel(10, stats.experience, stats.level))  
+        }
       }
+
       AsyncFunction()
 
   },[]);
+
+  useEffect(() => {
+    const AsyncFunction  = async () => {
+        
+        if (stats) {
+        // console.log(stats.experience, stats.level)  
+
+        console.log(await checkLevel(10, stats.experience, stats.level))  
+        }
+      }
+
+      AsyncFunction()
+
+  },[stats]);
 
     if (stats) {
     return <>

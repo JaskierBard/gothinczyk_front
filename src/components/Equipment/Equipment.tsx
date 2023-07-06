@@ -3,6 +3,7 @@ import './Equipment.css'
 import { getAll } from '../../functions/getEquipment';
 import { Spinner } from './common/Spinner/Spinner';
 import { EquipmentCell } from './EquipmentCell';
+import { checkLevel } from '../../functions/checkLevel';
 
 export const Equipment = () => {
   const [items, setItems] = useState<any>(null)
@@ -14,7 +15,6 @@ export const Equipment = () => {
     const AsyncFunction  = async () => {
       setItems(null)
       setItems(await getAll())  
-      console.log(await getAll())  
 
     }
     AsyncFunction()
@@ -90,12 +90,12 @@ export const Equipment = () => {
       <div className='eq' onWheel={MouseWheelDetector}>
         {
           current.map((element2: any) => (
-          <EquipmentCell key={element2.id} path={element2} type={element2.type}/>
+          <EquipmentCell key={element2.img} path={element2} type={element2.type}/>
         ))
       }
       {Array.from({length:ceils}, (value, index) => (
-        <div className='ceil' key={index}></div>
-      ))}
+  <div className='ceil' key={index}></div>
+  ))}
       <div className='showItem' >
         <p className='name'></p>
         <p className='price'></p>
