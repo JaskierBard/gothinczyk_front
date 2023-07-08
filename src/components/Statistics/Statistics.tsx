@@ -6,6 +6,8 @@ import { checkLevel } from '../../functions/checkLevel';
 
 export const Statistics = () => {
   const [stats, setStats] = useState<any>(null)
+  const [level, setLevel] = useState<any>(null)
+
 
   useEffect(() => {
     const AsyncFunction  = async () => {
@@ -36,7 +38,7 @@ export const Statistics = () => {
         
         if (stats) {
 
-        console.log(await checkLevel(10, stats.experience, stats.level))  
+        setLevel(await checkLevel(10, stats.experience, stats.level))  
         }
       }
 
@@ -60,7 +62,7 @@ export const Statistics = () => {
                     <p>Punkty nauki</p>
                 </div>
                 <div className='values'>
-                    <p>Poziom 1</p> 
+                    <p>Poziom {level}</p> 
                     <p>Krąg {stats.magic_circle}</p>
                     <p>{stats.experience}</p>
                     <p>1</p>

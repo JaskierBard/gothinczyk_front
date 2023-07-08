@@ -18,9 +18,6 @@ if (experience<500) {
 if (maxLevelKey !== null && Number(maxLevelKey) > currentLevel) {
     console.log('level up')
   }
-// console.log('experience ' + experience)
-//   console.log('current level ' + currentLevel)
-
 return maxLevelKey
    
  };
