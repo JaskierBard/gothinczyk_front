@@ -11,20 +11,30 @@ export const Statistics = () => {
     const AsyncFunction  = async () => {
         setStats(null)
         setStats(await getStats())  
-        if (stats) {
-        console.log(await checkLevel(10, stats.experience, stats.level))  
-        }
       }
 
       AsyncFunction()
 
   },[]);
 
+  const weaponUsing = (percent: number, distance: string ) => {
+    if (percent < 30) {
+        return <p>Zielony</p>
+    } else if ( percent < 60){
+        if (distance ==='short') {
+            return <p>Wojownik</p>
+        } else {
+            return <p>Strzelec</p>
+        }
+    } else {
+        return <p>Mistrz</p>
+    }
+  }
+
   useEffect(() => {
     const AsyncFunction  = async () => {
         
         if (stats) {
-        // console.log(stats.experience, stats.level)  
 
         console.log(await checkLevel(10, stats.experience, stats.level))  
         }
@@ -106,10 +116,10 @@ export const Statistics = () => {
                 <p>Zbieranie trofeów</p> 
             </div>
             <div className='values'>
-                <p>Uczony</p>
-                <p>Wojownik</p>
-                <p>Wojownik</p>
-                <p>Wojownik</p>
+                {weaponUsing(stats.one_handed, 'short')}
+                {weaponUsing(stats.two_handed, 'short')}
+                {weaponUsing(stats.bow, 'long')}
+                {weaponUsing(stats.crossbow, 'long')}
                 <br />
 
                 <p>-</p>
