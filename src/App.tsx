@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import { Equipment } from './components/Equipment/Equipment';
-import { Statistics } from './components/Statistics/Statistics';
-import { StatisticAdding } from './components/Test/AddStatistics';
+import { SkillPanel } from './components/SkillPanel/SkillPanel';
+
 
 
 function App() {
   return (
   <>
-    <Statistics/>
-    <StatisticAdding/>
+    <SkillPanel/>
+    {/* <StatisticAdding/> */}
     <Equipment/>
   </>
     

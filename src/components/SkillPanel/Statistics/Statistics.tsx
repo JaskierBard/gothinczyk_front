@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './Statistics.css'
-import { getStats } from '../../functions/getStatistic';
-import { checkLevel } from '../../functions/checkLevel';
+import { getStats } from '../../../functions/getStatistic';
+import { checkLevel } from '../../../functions/checkLevel';
+import { StatisticAdding } from '../Test/AddStatistics';
+
+interface Props {
+    stats: any
+    exp: any
+  }
+
+export const Statistics = (props:Props) => {
+  const [toNewLvl, setToNewLevel] = useState<any>(null)
 
 
-export const Statistics = () => {
-  const [stats, setStats] = useState<any>(null)
-  const [level, setLevel] = useState<any>(null)
-
-
-  useEffect(() => {
-    const AsyncFunction  = async () => {
-        setStats(null)
-        setStats(await getStats())  
-      }
-
-      AsyncFunction()
-
-  },[]);
 
   const weaponUsing = (percent: number, distance: string ) => {
     if (percent < 30) {
@@ -36,17 +31,16 @@ export const Statistics = () => {
   useEffect(() => {
     const AsyncFunction  = async () => {
         
-        if (stats) {
-
-        setLevel(await checkLevel(10, stats.experience, stats.level))  
+        if (props.stats) {
+            // console.log(props.exp)
+        setToNewLevel(await checkLevel(props.exp , props.stats.experience, props.stats.level))
         }
       }
 
       AsyncFunction()
 
-  },[stats]);
+  },[props.exp]);
 
-    if (stats) {
     return <>
             <div className='stats'>
             <div className='stats_bgc'>
@@ -62,11 +56,11 @@ export const Statistics = () => {
                     <p>Punkty nauki</p>
                 </div>
                 <div className='values'>
-                    <p>Poziom {level}</p> 
-                    <p>Krąg {stats.magic_circle}</p>
-                    <p>{stats.experience}</p>
-                    <p>1</p>
-                    <p>{stats.learning_points}</p>
+                    <p>Poziom {props.stats.level}</p> 
+                    <p>Krąg {props.stats.magic_circle}</p>
+                    <p>{props.stats.experience}</p>
+                    <p>{toNewLvl}</p>
+                    <p>{props.stats.learning_points}</p>
                 </div>
         </div>
         <div className='attributes'>
@@ -78,10 +72,10 @@ export const Statistics = () => {
                 <p>Punkty trafień</p>
             </div>
             <div className='values'>
-                <p>{stats.strength}</p>
-                <p>{stats.dexterity}</p>
-                <p>{stats.mana}</p>
-                <p>{stats.hitpoints}</p>
+                <p>{props.stats.strength}</p>
+                <p>{props.stats.dexterity}</p>
+                <p>{props.stats.mana}</p>
+                <p>{props.stats.hitpoints}</p>
             </div>
         </div>
         <div className='protection'>
@@ -118,16 +112,16 @@ export const Statistics = () => {
                 <p>Zbieranie trofeów</p> 
             </div>
             <div className='values'>
-                {weaponUsing(stats.one_handed, 'short')}
-                {weaponUsing(stats.two_handed, 'short')}
-                {weaponUsing(stats.bow, 'long')}
-                {weaponUsing(stats.crossbow, 'long')}
+                {weaponUsing(props.stats.one_handed, 'short')}
+                {weaponUsing(props.stats.two_handed, 'short')}
+                {weaponUsing(props.stats.bow, 'long')}
+                {weaponUsing(props.stats.crossbow, 'long')}
                 <br />
 
                 <p>-</p>
                 <p>-</p>
                 <p>-</p>
-                <br />
+                <br/>
                 <p>-</p>
 
                 <p>-</p>
@@ -135,17 +129,15 @@ export const Statistics = () => {
                 <p>-</p>
             </div>
             <div className='percent'>
-                <p>{stats.one_handed}%</p>
-                <p>{stats.two_handed}%</p>
-                <p>{stats.bow}%</p>
-                <p>{stats.crossbow}%</p>
+                <p>{props.stats.one_handed}%</p>
+                <p>{props.stats.two_handed}%</p>
+                <p>{props.stats.bow}%</p>
+                <p>{props.stats.crossbow}%</p>
             </div>
     </div>
     </div>
     </>
-    } else {
-        return null
-    }
+ 
   
 
  
