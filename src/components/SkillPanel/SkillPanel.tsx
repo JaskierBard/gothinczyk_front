@@ -1,7 +1,11 @@
 import react, {useEffect, useState } from "react";
-import { Statistics } from "./Statistics/Statistics";
 import { StatisticAdding } from "./Test/AddStatistics";
 import { getStats } from "../../functions/getStatistic";
+import { Character } from "./Character/Character";
+import { Attributes } from "./Attributes/Attributes";
+import { Protection } from "./Protection/Protection";
+import { Skills } from "./Skills/Skills";
+import './SkillPanel.css'
 
 export const SkillPanel = () => {
   const [stats, setStats] = useState<any>(null)
@@ -33,19 +37,26 @@ export const SkillPanel = () => {
 
   const resetStats = async () => {
     setReset(true)
-
     await fetch(`http://localhost:3001/player/statistic/reset`);
 };
     
-  if (stats) {
-    // console.log(stats)
-  return (
-    <div>
-      <Statistics stats={stats} exp={exp}/>
-      <StatisticAdding expClick={addExperience} resetStats={resetStats}/>
+  
+  return <>
+    <div className='stats'>
+            <div className='stats_bgc'></div>
+            {/* {stats && (
+              <> */}
+            <Character stats={stats} exp={exp}/>
+            <Attributes stats={stats}/>
+            <Protection stats={stats}/>
+            <Skills stats={stats}/>
+            {/* </>
+            )} */}
     </div>
-  );
-  } else {
-    return null
-  }
+
+      <StatisticAdding expClick={addExperience} resetStats={resetStats}/>
+  </>
+      
+  ;
+
 };

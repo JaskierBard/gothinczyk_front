@@ -71,7 +71,7 @@ export const Equipment = () => {
 
   if (items === null) {
     return (
-      <><Spinner/>
+      <>
       <div className='eq' >
         {Array.from({length:ceils}, (value, index) => (
           <div className='ceil' key={index}>

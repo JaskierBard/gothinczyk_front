@@ -1,6 +1,5 @@
 import React, { FormEvent, useState } from 'react';
 import './AddStatistics.css'
-import { Statistics } from '../Statistics/Statistics';
 
 
 
