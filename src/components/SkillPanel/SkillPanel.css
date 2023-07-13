@@ -41,11 +41,13 @@
 h2 {
     background-color: rgb(27, 27, 27);
     margin-top: -15px;
-    margin-left: 17%;
+    margin-left: 14%;
+    padding: 2px;
     border: 1px solid rgba(255, 255, 0, 0.534);
-    width: 200px;
+    width: 230px;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: new_gothic_font, sans-serif;
+    font-size: 20px;
     justify-content: center;
     /* margin-bottom: 10px; */
 }
@@ -60,7 +62,7 @@ h2 {
 
  p {
     margin-left: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: gothic_font, sans-serif;
 } 
 
 .names {
@@ -85,6 +87,6 @@ h2 {
     padding: 2px;
     display: inline-block;
     position: absolute;
-    top: 22px;
+    top: 20px;
 }
 

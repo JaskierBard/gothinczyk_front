@@ -5,7 +5,6 @@ export const getStats = async () => {
     const res = await fetch(`http://localhost:3001/player/statistic`);
     const data = await res.json();
     await checkLevel(
-      10,
       data.statistic[0]["experience"],
       data.statistic[0]["level"]
     );

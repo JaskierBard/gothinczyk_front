@@ -1,3 +1,14 @@
 body{
   background-color: rgb(65, 70, 58);
 }
+
+@font-face {
+  font-family: gothic_font;
+  src: url(../public/fonts/gothic_font.ttf) format('truetype'); /* lub 'opentype' dla plików OTF */
+}
+
+@font-face {
+  font-family: new_gothic_font;
+  src: url(../public/fonts/new_gothic_font.ttf) format('truetype'); /* lub 'opentype' dla plików OTF */
+}
+

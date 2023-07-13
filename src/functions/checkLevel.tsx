@@ -14,7 +14,6 @@ const levels: any = {
 };
 
 export const checkLevel = async (
-  gainedExperience: number,
   experience: number,
   currentLevel: number
 ) => {
@@ -35,9 +34,9 @@ export const checkLevel = async (
     console.log("level up");
     levelDifference = Number(maxLevelKey) - currentLevel;
 
-    updateLearningPoints(levelDifference, "+");
+    await updateLearningPoints(levelDifference, "+");
     if (levelDifference !== 0) {
-      updateLevel(levelDifference);
+      await updateLevel(levelDifference);
     }
   }
 

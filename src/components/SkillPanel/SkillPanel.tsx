@@ -22,8 +22,7 @@ export const SkillPanel = () => {
     setReset(false);
   }, [exp, reset]);
 
-  const addExperience = async () => {
-    let experience = 200;
+  const addExperience = async (experience:number) => {
     try {
       const res = await fetch(
         `http://localhost:3001/player/statistic/experience/${experience}`,
@@ -34,8 +33,8 @@ export const SkillPanel = () => {
           },
         }
       );
-      await res.json();
-      setExp((exp) => exp + experience);
+      const data = await res.json();
+      console.log(data)
     } catch (error) {
       console.log(error);
     }
@@ -57,8 +56,11 @@ export const SkillPanel = () => {
       </div>
 
       <StatisticAdding
-        expClick={addExperience}
-        strengthClick={() => addAttributes(1, "strength")}
+        expClick={() => {addExperience(200); setReset(true)}}
+        strengthClick={() => {addAttributes(stats['learning_points'], "strength"); setReset(true)}}
+        dexterityClick={() => {addAttributes(stats['learning_points'], "dexterity"); setReset(true)}}
+        manaClick={() => {addAttributes(stats['learning_points'], "mana"); setReset(true)}}
+        hitPointsClick={() => {addAttributes(stats['learning_points'], "hitpoints"); setReset(true)}}
         resetStats={resetStats}
       />
     </>
