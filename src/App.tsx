@@ -1,17 +1,14 @@
-import React from 'react';
-import './App.css';
-import { Equipment } from './components/Equipment/Equipment';
-import { SkillPanel } from './components/SkillPanel/SkillPanel';
-
-
+import React from "react";
+import "./App.css";
+import { Equipment } from "./components/Equipment/Equipment";
+import { SkillPanel } from "./components/SkillPanel/SkillPanel";
 
 function App() {
   return (
-  <>
-    <SkillPanel/>
-    <Equipment/>
-  </>
-    
+    <>
+      <SkillPanel />
+      <Equipment />
+    </>
   );
 }
 

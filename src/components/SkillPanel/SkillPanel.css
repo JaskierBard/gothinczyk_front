@@ -34,6 +34,7 @@
     margin: 30px;
     width: 43%;
     border: 1px solid rgba(255, 255, 0, 0.534);
+    
 }
 
 
@@ -75,6 +76,7 @@ h2 {
 .values {
     padding: 2px;
     display: inline-block;
+   
     /* width: 30%; */
 }
 
@@ -85,3 +87,4 @@ h2 {
     position: absolute;
     top: 22px;
 }
+

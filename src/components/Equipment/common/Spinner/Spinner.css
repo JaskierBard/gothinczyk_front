@@ -4,14 +4,10 @@
   }
   .Spinner:after {
     content: '';
-    /* display: inline-block; */
     position: absolute;
     width: 48px;
     height: 48px;
-    /* left: 900px; */
-    /* top: 400px; */
     border-radius: 50%;
-    /* border: 1px solid gold; */
     background: #c9c48379;
     animation: coin-flip 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
