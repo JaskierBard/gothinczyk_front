@@ -3,7 +3,6 @@ import "./Character.css";
 
 interface Props {
   stats: any;
-  exp: any;
   toNewLvl: any;
 }
 

@@ -4,7 +4,7 @@ export const getStats = async () => {
   try {
     const res = await fetch(`http://localhost:3001/player/statistic`);
     const data = await res.json();
-    await checkLevel(
+    const exp = await checkLevel(
       data.statistic[0]["experience"],
       data.statistic[0]["level"]
     );
@@ -12,7 +12,9 @@ export const getStats = async () => {
     const response = await fetch(`http://localhost:3001/player/statistic`);
     const result = await response.json();
 
-    return result.statistic[0];
+    return {
+      statistic: result.statistic[0],
+      exp: exp }
   } catch (err) {
     console.log(err);
   }
