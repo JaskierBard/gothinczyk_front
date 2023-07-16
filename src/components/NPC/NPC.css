@@ -1,0 +1,28 @@
+.talkingArea{
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 500px;
+    width: 700px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.479);
+    color: rgb(238, 222, 193);
+}
+
+.talkingArea>a{
+    font-family: gothic_font, sans-serif;
+    margin-left: 10px;
+}
+
+.talkingArea>p{
+    font-family: gothic_font, sans-serif;
+    margin-left: 10px;
+}
+.talkingArea>p:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.talkingArea>a:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
