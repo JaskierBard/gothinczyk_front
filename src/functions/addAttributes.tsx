@@ -18,6 +18,9 @@ export const addAttributes = async (
     );
     return;
   } else {
-    console.log("not enough learning points");
+    const audio = new Audio(process.env.PUBLIC_URL + '/audio/Npc/SVM_14_NOLEARNNOPOINTS.WAV')
+    audio.play()
   }
 };
+
+
