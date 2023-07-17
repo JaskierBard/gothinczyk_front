@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Equipment.css";
-import { getAll, getMerchantGoods } from "../../functions/getEquipment";
+import { getMerchantGoods } from "../../functions/getEquipment";
 import { EquipmentCell } from "./EquipmentCell";
 
 export const MerchantEquipment = () => {

@@ -37,12 +37,7 @@ else if (learning && !shop) {
 
     </div>
 
-        {/* <StatisticAdding
-        strengthClick={async() => {await addAttributes(stats['learning_points'], "strength");await Stats()}}
-        dexterityClick={async() => {await addAttributes(stats['learning_points'], "dexterity");await Stats()}}
-        manaClick={async() => {await addAttributes(stats['learning_points'], "mana");await Stats()}}
-        hitPointsClick={async() => {await addAttributes(stats['learning_points'], "hitpoints");await Stats()}}
-      /> */}
+       
 }
 
 else if (!learning && shop) {

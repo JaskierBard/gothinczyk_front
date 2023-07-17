@@ -85,7 +85,10 @@ export const Equipment = () => {
     );
   } else {
     return (
+      
       <div className="eq" onWheel={MouseWheelDetector}>
+                <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>100</p></div>
+
         {current.map((element2: any) => (
           <EquipmentCell
             key={element2.img}
