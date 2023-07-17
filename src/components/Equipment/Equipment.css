@@ -1,11 +1,19 @@
-.eq{
+.eq, .MerchantEq{
     box-sizing: border-box;
     margin-top: 100px;
-    margin-left: 800px;
+    margin-left: 1400px;
     font-size: 0;
     width: 400px;
     height: 480px;
 }
+
+.MerchantEq{
+    margin-left: 900px;
+    margin-top: 0px;
+    position: absolute;
+}
+
+
 
 .ceil{
     box-sizing: border-box;
@@ -30,9 +38,8 @@
     right: 3px;
 }
 
-.eq>div>a{
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
+.eq>div>a, .MerchantEq>div>a{
+    /* position: absolute; */
     font-size: 20px;
     color: rgb(177, 177, 177);
     bottom:0px;
@@ -51,7 +58,7 @@
 
 }
 
-.eq>div>img{
+.eq>div>img, .MerchantEq>div>img{
     box-sizing: border-box;
     margin: 0;
     padding:5px 5px 5px 5px;
@@ -75,7 +82,6 @@
 
 .showItem > .name {
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     color: rgb(156, 156, 156);
     font-size: 18px;
@@ -83,7 +89,6 @@
 }
 
 .showItem > .price {
-    font-family: Arial, Helvetica, sans-serif;
     color: rgb(156, 156, 156);
     font-size: 15px;
     display: flex;

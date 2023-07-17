@@ -35,14 +35,14 @@ export const SkillPanel = () => {
 
   return (
     <>
-      <div className="stats">
+      {/* <div className="stats">
         
         <div className="stats_bgc"></div>
         <Character stats={stats} toNewLvl={expLeft} />
         <Attributes stats={stats} />
         <Protection stats={stats} />
         <Skills stats={stats} />
-      </div>
+      </div> */}
       <Bosper strengthClick={async() => {await addAttributes(stats['learning_points'], "strength");await Stats()}}/>
 
       <StatisticAdding
