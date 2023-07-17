@@ -4,12 +4,26 @@ import { getAll } from "../../functions/getEquipment";
 import { Spinner } from "./common/Spinner/Spinner";
 import { EquipmentCell } from "./EquipmentCell";
 import { checkLevel } from "../../functions/checkLevel";
+import { getStats } from "../../functions/getStatistic";
 
 export const Equipment = () => {
   const [items, setItems] = useState<any>(null);
   const [ceils, setCeils] = useState<any>(0);
   const [value, setValue] = useState<number>(0);
   const [current, setCurrent] = useState<any>();
+
+  const [money, setMoney] = useState<any>(null);
+
+
+  useEffect(() => {
+
+    Stats();
+  },[]);
+  const Stats = async () => {
+    const result = await getStats()
+      setMoney(result?.gold);
+
+  };
 
   useEffect(() => {
     const AsyncFunction = async () => {
@@ -87,7 +101,7 @@ export const Equipment = () => {
     return (
       
       <div className="eq" onWheel={MouseWheelDetector}>
-                <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>100</p></div>
+                <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
 
         {current.map((element2: any) => (
           <EquipmentCell

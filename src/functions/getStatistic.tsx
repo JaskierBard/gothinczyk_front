@@ -11,10 +11,11 @@ export const getStats = async () => {
 
     const response = await fetch(`http://localhost:3001/player/statistic`);
     const result = await response.json();
-
     return {
+      gold:result.statistic[0].gold,
       statistic: result.statistic[0],
-      exp: exp }
+      exp: exp 
+    }
   } catch (err) {
     console.log(err);
   }
