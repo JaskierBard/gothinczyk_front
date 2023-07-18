@@ -87,6 +87,7 @@ export const MerchantEquipment = () => {
         {current.map((element2: any) => (
           <EquipmentCell
             key={element2.img}
+            gold={10000}
             path={element2}
             type={element2.type}
           />
@@ -94,15 +95,6 @@ export const MerchantEquipment = () => {
         {Array.from({ length: ceils }, (value, index) => (
           <div className="ceil" key={index}></div>
         ))}
-        <div className="showItem">
-          <p className="name"></p>
-          <p className="price"></p>
-          <img
-            className={"img"}
-            style={{ opacity: 0, width: 100, height: 100 }}
-            alt="img"
-          />
-        </div>
       </div>
     );
   }

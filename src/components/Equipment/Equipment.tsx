@@ -33,6 +33,8 @@ export const Equipment = () => {
     AsyncFunction();
   }, []);
 
+  
+
   useEffect(() => {
     Pagination(value);
   }, [items, value]);
@@ -101,12 +103,13 @@ export const Equipment = () => {
     return (
       
       <div className="eq" onWheel={MouseWheelDetector}>
-                <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
+        <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
 
         {current.map((element2: any) => (
           <EquipmentCell
             key={element2.img}
             path={element2}
+            gold={money}
             type={element2.type}
           />
         ))}

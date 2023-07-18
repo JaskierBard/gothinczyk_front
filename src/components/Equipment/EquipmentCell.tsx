@@ -1,10 +1,12 @@
 import React from "react";
 import "./Equipment.css";
+import { buyProduct } from "../../functions/buyProduct";
 
 interface Props {
   path: any;
   type: any;
   ceil?: number;
+  gold: number
 }
 
 const weapon = [
@@ -43,6 +45,10 @@ export const EquipmentCell = (props: Props) => {
     eqhtml.style.opacity = 1;
   };
 
+  const handleClick = (id:string) => {
+    buyProduct(props.path.price, props.gold, id, props.path.type)
+  }
+
   const Leave = () => {
     const eqhtml: any = document.querySelector(`.img`);
     const eqname: any = document.querySelector(`.name`);
@@ -64,6 +70,7 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
+                onClick={() => {handleClick(props.path.weapon_id)}}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -76,6 +83,8 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
+                onClick={() => {handleClick(props.path.armor_id)}}
+
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -88,6 +97,8 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
+                onClick={() => {handleClick(props.path.magic_id)}}
+
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -100,6 +111,8 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
+                onClick={() => {handleClick(props.path.alchemy_id)}}
+
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -112,6 +125,8 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
+                onClick={() => {handleClick(props.path.other_id)}}
+
               />
               <p className="quantity">{props.path.quantity}</p>
             </>

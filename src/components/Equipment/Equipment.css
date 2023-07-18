@@ -82,11 +82,11 @@
 }
 
 .money{
-    position: absolute;
+    position: relative;
     width: 140px;
     height: 30px;
-    top: 65px;
-    right: 120px;
+    top: -10px;
+    left: 260px;
     background-color: rgba(0, 0, 0, 0.596);
     border-bottom: 1px solid rgb(102, 102, 102);
     border-right: 1px solid rgb(102, 102, 102);
