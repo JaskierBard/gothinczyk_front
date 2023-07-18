@@ -1,23 +1,22 @@
 .npc{
     width: 500px;
+    height: 600px; 
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.918);
+    border-radius: 5px;
+    top: 80px;
+    left: 150px;
+    position: absolute;
 }
 
 .talkingArea{
     position: absolute;
-    margin-left: 50px;
-    margin-top: 440px;
-    width: 730px;
+    width: 100%;
     height: 120px;
-    background-color: rgba(0, 0, 0, 0.479);
+    bottom: 0px;
     color: rgb(238, 222, 193);
-    padding: 7px;
-    background-color: rgba(0, 0, 0, 0.596);
-    box-shadow:inset 0 0  5px rgba(0, 0, 0, 0.575);
-
-    /* /* border-bottom: 1px solid rgb(102, 102, 102); */
+    padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.700);
 }
-
-
 
 .talkingArea>p{
     font-family: gothic_font, sans-serif;
@@ -28,17 +27,13 @@
     cursor: pointer;
 }
 
-.talkingArea>a:hover{
-    color: aliceblue;
-    cursor: pointer;
+.npc>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.npc>img{
-    border-bottom: 2px solid rgb(102, 102, 102);
-    border-right: 2px solid rgb(102, 102, 102);   
-    box-shadow: 0 0  5px rgba(0, 0, 0, 0.918);
-    border-radius: 5px;
-    position: absolute;
-    margin-left: 50px;
-    width: 750px;
+.flame{
+    left: 20%;
+    top: 50%;
 }
