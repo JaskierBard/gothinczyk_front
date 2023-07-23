@@ -7,7 +7,7 @@ import { Pagination } from "../../functions/pagination";
 import { EmptyCells } from "./EmptyCells";
 import { getMoney } from "../../functions/getMoney";
 interface Props {
-  id: string;
+  player_id: string;
   character: string;
 }
 
@@ -30,7 +30,7 @@ export const Equipment = (props: Props) => {
   useEffect(() => {
     const AsyncFunction = async () => {
       // setItems(null);
-      setItems(await getItems(props.id));
+      setItems(await getItems(props.player_id));
     };
     AsyncFunction();
   }, []);
@@ -71,7 +71,8 @@ export const Equipment = (props: Props) => {
           <EquipmentCell
             key={element2.img}
             path={element2}
-            id={props.id}
+            player_id={props.player_id}
+            money={money}
             type={element2.type}
           />
         ))}

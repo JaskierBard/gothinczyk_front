@@ -6,7 +6,8 @@ interface Props {
   path: any;
   type: any;
   ceil?: number;
-  id: string;
+  player_id: string;
+  money: number;
 }
 
 const weapon = [
@@ -46,10 +47,10 @@ export const EquipmentCell = (props: Props) => {
   };
 
   const handleClick = (id:string) => {
-    if (props.id === 'merchant') {
-      buyProduct(props.path.price, props.path.gold, id, props.path.type)
+    if (props.player_id === 'merchant') {
+      buyProduct(props.path.price,props.money,id,  props.path.type, props.player_id )
     } else {
-      sellProduct(props.path.price, props.path.gold, id, props.path.type)
+      sellProduct(props.path.price, props.money, id, props.path.type)
 
     }
   }

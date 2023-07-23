@@ -9,11 +9,7 @@ export const addAttributes = async (
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          learningPoints: learningPoints,
-          attribute: attribute,
-        }),
+        }
       }
     );
     return;

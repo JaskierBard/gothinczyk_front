@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <SkillPanel />
-      <Equipment id={player_id} character="equipment"/>
+      <Equipment player_id={player_id} character="equipment"/>
     </>
   );
 }

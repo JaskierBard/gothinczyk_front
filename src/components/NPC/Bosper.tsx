@@ -45,7 +45,7 @@ else if (!learning && shop) {
     <Flame/>
 
 <img  src="./Npc/Bosper.jpg" alt="" />
-<Equipment id='merchant' character="merchant_goods"/>
+<Equipment player_id='merchant' character="merchant_goods"/>
 <div className="talkingArea">
        
 <p onClick={()=>setShop(false)}>Zakończ handel</p>
