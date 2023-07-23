@@ -50,12 +50,20 @@ export const sellProduct = async (
   if (productPrice < merchantGold) {
     try {
       const res = await fetch(
-        `http://localhost:3001/player/sell/${productPrice}/${itemId}/${type}`,
+        `http://localhost:3001/player/buy`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+
+          body: JSON.stringify({
+            productPrice: productPrice,
+            type: type,
+            itemId: itemId,
+            sellerId: "865055da-1b49-11ee-af61-581122ba8110",
+            buyerId: 'merchant'
+          }),
         }
       );
       const data = await res.json();
