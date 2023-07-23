@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Equipment.css";
-import { getAll } from "../../functions/getEquipment";
-import { Spinner } from "./common/Spinner/Spinner";
+import { getItems } from "../../functions/getEquipment";
 import { EquipmentCell } from "./EquipmentCell";
-import { checkLevel } from "../../functions/checkLevel";
 import { getStats } from "../../functions/getStatistic";
+import { Pagination } from "../../functions/pagination";
+import { EmptyCells } from "./EmptyCells";
+interface Props {
+  id: string;
+  character: string;
+}
 
-export const Equipment = () => {
+export const Equipment = (props: Props) => {
   const [items, setItems] = useState<any>(null);
-  const [ceils, setCeils] = useState<any>(0);
+  const [cells, setCells] = useState<number>(0);
   const [value, setValue] = useState<number>(0);
   const [current, setCurrent] = useState<any>();
-
   const [money, setMoney] = useState<any>(null);
 
 
@@ -27,8 +30,8 @@ export const Equipment = () => {
 
   useEffect(() => {
     const AsyncFunction = async () => {
-      setItems(null);
-      setItems(await getAll());
+      // setItems(null);
+      setItems(await getItems(props.id));
     };
     AsyncFunction();
   }, []);
@@ -36,33 +39,16 @@ export const Equipment = () => {
   
 
   useEffect(() => {
-    Pagination(value);
+    const AsyncFunction = async () => {
+      const result = await Pagination(value, items);
+      setCells(result.cells);
+      setCurrent(result.current);
+    };
+    AsyncFunction();
+    
   }, [items, value]);
 
-  const Pagination = async (value: number) => {
-    let counter = 30 + value;
-    let Cutcounter = value;
 
-    const Array: any = [];
-    try {
-      items.forEach((element1: any) =>
-        Object.values(element1).forEach((item: any) => {
-          if (item !== undefined) {
-            item.forEach((element2: any) => {
-              if (counter > 0 && Cutcounter <= 0) {
-                Array.push(element2);
-              }
-              counter--;
-              Cutcounter--;
-            });
-          }
-        })
-      );
-    } catch (err) {}
-
-    setCeils(30 - Array.length);
-    setCurrent(Array);
-  };
 
   const MouseWheelDetector = async (event: any) => {
     if (event.deltaY < 0) {
@@ -81,40 +67,23 @@ export const Equipment = () => {
   };
 
   if (items === null) {
-    return (
-      <>
-        <div className="eq">
-          {Array.from({ length: ceils }, (value, index) => (
-            <div className="ceil" key={index}></div>
-          ))}
-          <div className="showItem">
-            <p className="name"></p>
-            <p className="price"></p>
-            <img
-              className={"img"}
-              style={{ opacity: 0, width: 100, height: 100 }}
-              alt="img"
-            />
-          </div>
-        </div>
-      </>
-    );
+    return <EmptyCells cells={cells} character={props.character}/>
   } else {
     return (
       
-      <div className="eq" onWheel={MouseWheelDetector}>
-        <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
+      <div className={props.character} onWheel={MouseWheelDetector}>
+        {/* <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div> */}
 
         {current.map((element2: any) => (
           <EquipmentCell
             key={element2.img}
             path={element2}
-            gold={money}
+            // gold={money}
             type={element2.type}
           />
         ))}
-        {Array.from({ length: ceils }, (value, index) => (
-          <div className="ceil" key={index}></div>
+        {Array.from({ length: cells }, (value, index) => (
+          <div className="cell" key={index}></div>
         ))}
         <div className="showItem">
           <p className="name"></p>

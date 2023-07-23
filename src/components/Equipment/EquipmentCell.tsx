@@ -6,7 +6,6 @@ interface Props {
   path: any;
   type: any;
   ceil?: number;
-  gold: number
 }
 
 const weapon = [
@@ -46,7 +45,7 @@ export const EquipmentCell = (props: Props) => {
   };
 
   const handleClick = (id:string) => {
-    buyProduct(props.path.price, props.gold, id, props.path.type)
+    buyProduct(props.path.price, props.path.gold, id, props.path.type)
   }
 
   const Leave = () => {
@@ -60,7 +59,7 @@ export const EquipmentCell = (props: Props) => {
   };
 
   return (
-    <div className="ceil">
+    <div className="cell">
       {(() => {
         if (weapon.includes(props.type)) {
           return (

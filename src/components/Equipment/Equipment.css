@@ -1,4 +1,4 @@
-.eq, .MerchantEq{
+.equipment, .merchant_goods{
     box-sizing: border-box;
     margin-top: 100px;
     margin-left: 1400px;
@@ -7,7 +7,7 @@
     height: 480px;
 }
 
-.MerchantEq{
+.merchant_goods{
     margin-left: 600px;
     margin-top: 0px;
     top: 0px;
@@ -16,7 +16,7 @@
 
 
 
-.ceil{
+.cell{
     box-sizing: border-box;
     position: relative;
     box-sizing: border-box;
@@ -39,7 +39,7 @@
     right: 3px;
 }
 
-.eq>div>a, .MerchantEq>div>a{
+.equipment>div>a, .merchant_goods>div>a{
     /* position: absolute; */
     font-size: 20px;
     color: rgb(177, 177, 177);
@@ -48,18 +48,18 @@
     
 }
 
-.ceil:hover{
+.cell:hover{
     box-shadow:inset 0 0 0 1.5px blue;
     cursor: pointer;    
     z-index: 100;   
 }
 
-.ceil:active{
+.cell:active{
     background-color: rgba(124, 4, 4, 0.808);
 
 }
 
-.eq>div>img, .MerchantEq>div>img{
+.equipment>div>img, .merchant_goods>div>img{
     box-sizing: border-box;
     margin: 0;
     padding:5px 5px 5px 5px;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./NPC.css";
 import { addAttributes } from "../../functions/addAttributes";
-import { MerchantEquipment } from "../Equipment/MerchantEquipment";
-import { Flame } from "../Equipment/common/Flame/Flame";
+import { Flame } from "../common/Flame/Flame";
+import { Equipment } from "../Equipment/Equipment";
 
 
 export const Bosper = ({strengthClick}:any) => {
@@ -45,7 +45,7 @@ else if (!learning && shop) {
     <Flame/>
 
 <img  src="./Npc/Bosper.jpg" alt="" />
-<MerchantEquipment/>
+<Equipment id='merchant' character="merchant_goods"/>
 <div className="talkingArea">
        
 <p onClick={()=>setShop(false)}>Zakończ handel</p>
