@@ -1,11 +1,12 @@
 import React from "react";
 import "./Equipment.css";
-import { buyProduct } from "../../functions/buyProduct";
+import { buyProduct, sellProduct } from "../../functions/buyProduct";
 
 interface Props {
   path: any;
   type: any;
   ceil?: number;
+  id: string;
 }
 
 const weapon = [
@@ -45,7 +46,12 @@ export const EquipmentCell = (props: Props) => {
   };
 
   const handleClick = (id:string) => {
-    buyProduct(props.path.price, props.path.gold, id, props.path.type)
+    if (props.id === 'merchant') {
+      buyProduct(props.path.price, props.path.gold, id, props.path.type)
+    } else {
+      sellProduct(props.path.price, props.path.gold, id, props.path.type)
+
+    }
   }
 
   const Leave = () => {

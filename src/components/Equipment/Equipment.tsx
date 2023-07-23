@@ -5,6 +5,7 @@ import { EquipmentCell } from "./EquipmentCell";
 import { getStats } from "../../functions/getStatistic";
 import { Pagination } from "../../functions/pagination";
 import { EmptyCells } from "./EmptyCells";
+import { getMoney } from "../../functions/getMoney";
 interface Props {
   id: string;
   character: string;
@@ -17,16 +18,14 @@ export const Equipment = (props: Props) => {
   const [current, setCurrent] = useState<any>();
   const [money, setMoney] = useState<any>(null);
 
-
   useEffect(() => {
-
-    Stats();
-  },[]);
-  const Stats = async () => {
-    const result = await getStats()
-      setMoney(result?.gold);
-
-  };
+    const AsyncFunction = async () => {
+      setMoney(getMoney(items));
+    };
+    if (items) {
+      AsyncFunction();
+    }
+  }, [items]);
 
   useEffect(() => {
     const AsyncFunction = async () => {
@@ -36,8 +35,6 @@ export const Equipment = (props: Props) => {
     AsyncFunction();
   }, []);
 
-  
-
   useEffect(() => {
     const AsyncFunction = async () => {
       const result = await Pagination(value, items);
@@ -45,10 +42,7 @@ export const Equipment = (props: Props) => {
       setCurrent(result.current);
     };
     AsyncFunction();
-    
   }, [items, value]);
-
-
 
   const MouseWheelDetector = async (event: any) => {
     if (event.deltaY < 0) {
@@ -67,18 +61,17 @@ export const Equipment = (props: Props) => {
   };
 
   if (items === null) {
-    return <EmptyCells cells={cells} character={props.character}/>
+    return <EmptyCells cells={cells} character={props.character} />;
   } else {
     return (
-      
       <div className={props.character} onWheel={MouseWheelDetector}>
-        {/* <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div> */}
+        <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
 
         {current.map((element2: any) => (
           <EquipmentCell
             key={element2.img}
             path={element2}
-            // gold={money}
+            id={props.id}
             type={element2.type}
           />
         ))}
