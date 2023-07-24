@@ -43,7 +43,7 @@ export const SkillPanel = () => {
         <Protection stats={stats} />
         <Skills stats={stats} />
       </div> */}
-      <Bosper strengthClick={async() => {await addAttributes(stats['learning_points'], "strength");await Stats()}}/>
+      {/* <Bosper strengthClick={async() => {await addAttributes(stats['learning_points'], "strength");await Stats()}}/> */}
 
       <StatisticAdding
         expClick={async() => {await addExperience(200); await Stats()}}

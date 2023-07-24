@@ -8,7 +8,10 @@ interface Props {
   ceil?: number;
   player_id: string;
   money: number;
+  reset: () => void
+  Click: () => Promise<void>
 }
+
 
 const weapon = [
   "one_handed two_handed",
@@ -23,6 +26,8 @@ const alchemy = ["herb", "alkohol", "mana mixture", "heal mixture"];
 const other = ["junk"];
 
 export const EquipmentCell = (props: Props) => {
+  const { Click } = props;
+
   const Enter = () => {
     const eqhtml: any = document.querySelector(`.img`);
     const eqname: any = document.querySelector(`.name`);
@@ -46,11 +51,17 @@ export const EquipmentCell = (props: Props) => {
     eqhtml.style.opacity = 1;
   };
 
-  const handleClick = (id:string) => {
+  const handleClick = async(id:string) => {
     if (props.player_id === 'merchant') {
-      buyProduct(props.path.price,props.money,id,  props.path.type, props.player_id )
+      await buyProduct(props.path.price,props.money,id,  props.path.type, props.player_id )
+      Click()
+      props.reset()
     } else {
-      sellProduct(props.path.price, props.money, id, props.path.type)
+      await sellProduct(props.path.price, props.money, id, props.path.type)
+      Click()
+      props.reset()
+
+
 
     }
   }

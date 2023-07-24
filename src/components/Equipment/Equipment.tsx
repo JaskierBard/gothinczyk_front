@@ -9,6 +9,8 @@ import { getMoney } from "../../functions/getMoney";
 interface Props {
   player_id: string;
   character: string;
+  counter: number;
+  reset: () => void
 }
 
 export const Equipment = (props: Props) => {
@@ -17,7 +19,7 @@ export const Equipment = (props: Props) => {
   const [value, setValue] = useState<number>(0);
   const [current, setCurrent] = useState<any>();
   const [money, setMoney] = useState<any>(null);
-
+  const {reset} = props
   useEffect(() => {
     const AsyncFunction = async () => {
       setMoney(getMoney(items));
@@ -31,9 +33,10 @@ export const Equipment = (props: Props) => {
     const AsyncFunction = async () => {
       // setItems(null);
       setItems(await getItems(props.player_id));
+      // console.log(reset)
     };
     AsyncFunction();
-  }, []);
+  }, [props.counter]);
 
   useEffect(() => {
     const AsyncFunction = async () => {
@@ -69,6 +72,8 @@ export const Equipment = (props: Props) => {
 
         {current.map((element2: any) => (
           <EquipmentCell
+            Click={async() => {setItems(await getItems(props.player_id))}}
+            reset={reset}
             key={element2.img}
             path={element2}
             player_id={props.player_id}
