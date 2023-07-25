@@ -7,7 +7,7 @@ import { Protection } from "./Protection/Protection";
 import { Skills } from "./Skills/Skills";
 import "./SkillPanel.css";
 import { addAttributes } from "../../functions/addAttributes";
-import { Bosper } from "../NPC/Bosper";
+import { NPC } from "../NPC/NPC";
 import { addExperience } from "../../functions/addExperience";
 
 export const SkillPanel = () => {
