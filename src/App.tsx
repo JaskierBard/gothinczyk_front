@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { Equipment } from "./components/Equipment/Equipment";
 import { SkillPanel } from "./components/SkillPanel/SkillPanel";
-import { Bosper } from "./components/NPC/Bosper";
+import { NPC } from "./components/NPC/NPC";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -19,7 +19,7 @@ const App = () => {
     <>
       <SkillPanel />
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
-      <Bosper reset={resetCounter} counter={reset}/>
+      <NPC name={'Hakon'} reset={resetCounter} counter={reset}/>
 
     </>
   );
