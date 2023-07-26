@@ -1,102 +1,53 @@
 .reflection {
-    /* background: black; */
-    display: grid;
-    height: 100vh;
-    width: 100vh;
-    position: absolute;
-    box-sizing: border-box;
-    overflow: hidden;
+  display: grid;
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .lens-center {
-    position: relative;
-    width: 40vmin;
-    height: 10vmin;
-    border-radius: 100%;
-    left: calc(7% - (10vmin / 2));
-    top: calc(46% - (10vmin / 2));
-    background: radial-gradient(closest-side circle at center,
-        hsl(4 5% 100% / 100%) 0%, 
-        hsl(4 5% 100% / 100%) 15%, 
-        hsl(4 10% 70% / 70%) 30%,
-        hsl(4 0% 50% / 30%) 55%,
-        hsl(4 0% 10% / 5%) 75%,
-        transparent 99%
-    );
-    filter: blur(4px);
-}
-.lens-center::before{
-    content: '';
-    display: block;
-    width: 20vmin;
-    height: 30vmin;
-    left: calc((10vmin - 20vmin) / 2 * -1);
-    top: calc((10vmin - 10vmin) /2 * -1);
-    position: absolute;
-    border-radius: 100%;
-    background: radial-gradient(closest-side circle at center,
-      hsl(4 15% 70% / 15%) 0%,
-      transparent 100%);
+  position: relative;
+  width: 70px;
+  border-radius: 100%;
+  top: -24px;
+  left: 170px ;
+  background: radial-gradient(
+    closest-side circle at center,
+    hsl(4 5% 100% / 100%) 0%,
+    hsl(4 5% 100% / 100%) 15%,
+    hsl(4 10% 70% / 70%) 30%,
+    hsl(4 0% 50% / 30%) 55%,
+    hsl(4 0% 10% / 5%) 75%,
+    transparent 99%
+  );
+  filter: blur(4px);
+  transition: transform 0.5s;
 }
 
-.lens-center::after {
-    content: '';
-    display: block;
-    width: 4vmin;
-    height: 4vmin;
-    left: 65%;
-    bottom: 25%;
-    position: absolute;
-    border-radius: 100%;
-    background: radial-gradient(closest-side circle at center,
-        hsl(4 30% 70% / 60%) 0%,
-        transparent 75%);
+.lens-center:hover {
+    transform: translate(18px, -9px);
 }
-
-.circle-1 {
-    width: calc(10vmin * 0.7);
-    height: calc(10vmin * 0.7);
-    left: 23%;
-    top: 47%;
-    border-radius: 100%;
-    position: absolute;
-    background: radial-gradient(closest-side circle at center,
-        transparent 50%,
-        hsl(4 10% 70% / 40%) 90%,
-        transparent 100%);
-    filter: blur(5px);
-    z-index: 100;
-}
-
-.circle-2 {
-    width: calc(10vmin * 0.4);
-    height: calc(10vmin * 0.4);
-    left: 32%;
-    top: 55%;
-    border-radius: 100%;
-    position: absolute;
-    background:  hsl(4 10% 60% / 40%);
-    filter: blur(2px);
-    z-index: 100;
-
-}
-
-.horizontal-flare {
-    position: absolute;
-    height: 5vh;
-}
-
-
-
-
 
 .full-flare {
-    background: radial-gradient(closest-side ellipse at 35% center,
-        hsl(4 20% 90% / 80%) 0%,
-        hsl(4 10% 70% / 30%) 30%,
-        transparent 95%);
-    left: 0%;
-    width: 50%;
-    top: 43vh; 
-    filter: blur(5px);
+    position: relative;
+  background: radial-gradient(
+    closest-side ellipse at  center,
+    hsl(4 20% 90% / 80%) 5%,
+    hsl(4 10% 70% / 30%) 20%,
+    transparent 45%
+  );
+  top: 277px ;
+  left: -45px;
+  filter: blur(15px);
+  transition: transform 0.5s;
+
 }
+
+.full-flare:hover {
+    transform: translate(18px, -9px);
+    filter: blur(25px);
+
+}
+

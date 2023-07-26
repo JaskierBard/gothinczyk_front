@@ -3,6 +3,7 @@ import "./App.css";
 import { Equipment } from "./components/Equipment/Equipment";
 import { SkillPanel } from "./components/SkillPanel/SkillPanel";
 import { NPC } from "./components/NPC/NPC";
+import { NavBar } from "./components/NavBar/NavBar";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -17,9 +18,11 @@ const App = () => {
   };
   return (
     <>
+    <NavBar/>
       <SkillPanel />
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
-      <NPC name={'Hakon'} reset={resetCounter} counter={reset}/>
+      <NPC name={'Zuris'} reset={resetCounter} counter={reset}/>
+      
 
     </>
   );

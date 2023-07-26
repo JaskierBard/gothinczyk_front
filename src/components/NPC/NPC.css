@@ -6,6 +6,8 @@
     top: 80px;
     left: 150px;
     position: absolute;
+    background-color: bisque;
+    z-index: 1000;
 }
 
 .talkingArea{

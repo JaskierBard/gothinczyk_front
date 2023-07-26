@@ -1,4 +1,5 @@
 import { Flame } from "../common/Flame/Flame"
+import { Shine } from "../common/Flame/Shine/Shine"
 import { Reflection } from "../common/Reflection/Reflection"
 
 export const NPCView = ({ name }: { name: string }) => {
@@ -7,7 +8,7 @@ export const NPCView = ({ name }: { name: string }) => {
 
     } else if (name === 'Hakon'){
         console.log(name)
-        return <Reflection/>
+        return <Shine/>
 
     } else {
         console.log(name )

@@ -27,8 +27,9 @@ interface Props {
 if (!learning && !shop) {
     return <div className='npc'>    
         <NPCView name={props.name}/> 
-    
+
         <img src={`./Npc/${props.name}.jpg`} alt="" />
+
     <div className="talkingArea">
         <p onClick={()=>setLearning(true)}>Czy mozesz czegos mnie nauczyc?</p>
         <p onClick={()=>setShop(true)}>Pokaz mi co masz na sprzedaz.</p>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import "./Reflection.css";
+import "./Shine.css";
 
-export const Reflection = () => {
+export const Shine = () => {
 const [show, setShow] = useState<any>(true);
 
 // useEffect(() => {
@@ -17,11 +17,8 @@ const [show, setShow] = useState<any>(true);
 
 return<>
 
-<div className="reflection">
-    <div className={show ? "lens-center , move-animation" : ''}></div>
-    <div className={show ? "full-flare , move-animation" : ''}></div>
+<div className="shine"><span></span></div>
 
-  </div>
 
 </>
     
