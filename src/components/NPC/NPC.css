@@ -4,10 +4,10 @@
     box-shadow: 0 0  10px rgba(0, 0, 0, 0.918);
     border-radius: 5px;
     top: 80px;
-    left: 150px;
+    left: 50px;
     position: absolute;
     background-color: bisque;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .talkingArea{
