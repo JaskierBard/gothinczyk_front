@@ -7,6 +7,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Codes } from "./components/CodesBar/CodesBar";
 import { Console } from "./components/common/Console/Console";
 import { Bars } from "./components/common/Bars/Bars";
+import { Background } from "./components/Board/Board";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
     {/* <Codes/> */}
+    <Background rollResult={10} turn={"Blue"}/>
     <NavBar/>
     <Console/>
       {/* <SkillPanel /> */}

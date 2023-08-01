@@ -1,0 +1,147 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-image: url('../../../public/images/background/jarkendar_background.jpg'); */
+    background-size: cover;
+}
+
+/* .shadow {
+    position: absolute;
+
+    width: 96vw;
+    height: 99vh;
+    background-color: rgba(165, 2, 2, 0.39);
+    left: 2vw;
+    z-index: -3;
+
+} */
+
+.background {
+    position: absolute;
+    /* background-color: #32329e; */
+    background-image: url('../../../public/images/background/letter.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 1vh;
+    width: 99vh;
+    height: 99vh;
+    left: 29vw;
+    z-index: -1;
+}
+
+
+
+
+.bgc>div {
+    position: absolute;
+    margin-left: 32vw; 
+    margin-top: 9vh; 
+    height: 85vh;
+    width: 85vh;
+    font-size: 0;
+}
+
+.bgc>div>div {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 1px;
+    width: 7.5vh;
+    height: 7.5vh;
+    border-radius: 20%;
+}
+
+
+
+
+.area{
+    background-color: rgb(118, 146, 95);
+    cursor: pointer;
+}
+
+
+
+.redPlate, .redFinish{
+background-image: url('../../../public/images/plates/redPlate.webp');
+background-size: cover;
+background-position: center;
+}
+
+.bluePlate, .blueFinish{
+    background-image: url('../../../public/images/plates/bluePlate.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.greenPlate, .greenFinish{
+    background-image: url('../../../public/images/plates/greenPlate.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.yellowPlate, .yellowFinish{
+    background-image: url('../../../public/images/plates/yellowPlate.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.redArea{
+    background-color: rgb(145, 74, 74);
+}
+
+.blueArea{
+    background-color: #32329e;
+}
+
+.greenArea{
+    background-color: rgb(53, 141, 53);
+}
+
+.yellowArea{
+    background-color: #9c9c36;
+}
+
+
+
+.blue_pawn {
+    background-image:url('../../../public/images/pawns/pawnBlue.png');
+    background-size:cover;
+    background-position: center;
+ }
+ .red_pawn {
+     background-image:url('../../../public/images/pawns/pawnRed.png');
+     background-size: cover;
+    background-position: center;
+  }
+  .green_pawn {
+     background-image:url('../../../public/images/pawns/pawnGreen.png');
+     background-size: cover;
+    background-position: center;
+  }
+  .yellow_pawn { 
+    background-size: cover;
+    background-position: center;
+    content: url('../../../public/images/pawns/pawnYellow.png');
+    
+  }
+
+  .fight_pawn {
+    background-size: cover;
+    background-position: center;
+    content: url('../../../public/images/pawns/pawnFight.png');
+
+  }
+
+  /* .multiple {
+    background-image: url('./assets/pawns/pawnRed.png'), url('./assets/pawns/pawnGreen.png');
+
+    background-size: 50% 50%;
+
+    background-position: left bottom, left top;
+    background-repeat: no-repeat, no-repeat;
+    padding: 15px;
+  } */
+
+
