@@ -1,0 +1,31 @@
+
+
+.anim-body{
+    width: 100%;
+    height: 100vh;
+    background-position: bottom;
+    position: relative;
+    
+}
+
+.fog-anim{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: url('../../../../public/assets/fog.png') repeat-x;
+    background-size: 200% auto;
+    background-position: 0 bottom;
+    animation: fogAnim 200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes fogAnim{
+    0%{background-position: -200% bottom}
+   100%{background-position: 0% bottom}
+
+}
