@@ -1,11 +1,22 @@
-import React, { useState }  from "react";
+import React, { useEffect, useState }  from "react";
 import "./NavBar.css";
+import { getMoney } from "../../functions/getMoney";
 
-export const NavBar = () => {
-  const [hero, setHero] = useState<boolean>(false);
-  const [equipment, setEquipment] = useState<boolean>(false);
-  const [statistics, setStatistics] = useState<boolean>(false);
+interface Props {
+  reset:number
+}
 
+export const NavBar = (props:Props) => {
+  
+  const [money, setMoney] = useState<number>(222);
+  useEffect(() => {
+    const AsyncFunction = async () => {
+      setMoney(33);
+    };
+    // if (items) {
+    //   AsyncFunction();
+    // }
+  }, [props.reset]);
 
   return (
       <div className="Nav">
@@ -21,9 +32,10 @@ export const NavBar = () => {
 
         
         <section className="hero">
-          <p>Postać</p>
           <p>Ekwipunek</p>
           <p>Statystyki</p>
+          <div><img id="coin" src="./images/other/coin_icon.webp"  alt="" />{money}</div>
+
         </section>
         
       </div>

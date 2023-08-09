@@ -68,7 +68,6 @@ export const Equipment = (props: Props) => {
   } else {
     return (
       <div className={props.character} onWheel={MouseWheelDetector}>
-        <div className="money"><img id="coin" src="./images/other/coin_icon.webp"  alt="" /><p>{money}</p></div>
 
         {current.map((element2: any) => (
           <EquipmentCell

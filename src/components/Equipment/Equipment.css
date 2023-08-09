@@ -84,32 +84,7 @@
     height: 150px;
 }
 
-.money{
-    position: relative;
-    width: 140px;
-    height: 30px;
-    top: -10px;
-    left: 260px;
-    background-color: rgba(0, 0, 0, 0.596);
-    border-bottom: 1px solid rgb(102, 102, 102);
-    border-right: 1px solid rgb(102, 102, 102);
-    box-shadow:inset 0 0  5px rgba(0, 0, 0, 0.575);
-}
 
-.money>p {
-    color: rgb(156, 156, 156);
-    font-size: 29px;
-    position: absolute;
-    right: 3px;
-}
-
- #coin{
-    position: absolute;
-    top: -4px;
-    left: -5px;
-    width: 40px;
-    height: 40px;
-}
 
 .showItem > .name {
     display: flex;

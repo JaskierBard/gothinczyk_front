@@ -24,7 +24,7 @@ const App = () => {
     <>
     {/* <Codes/> */}
     <Background rollResult={10} turn={"Blue"}/>
-    <NavBar/>
+    <NavBar reset={reset}/>
     <Console/>
       {/* <SkillPanel /> */}
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
