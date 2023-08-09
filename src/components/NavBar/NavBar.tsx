@@ -5,6 +5,7 @@ import { getMoney } from "../../functions/getMoney";
 interface Props {
   reset:number
   show: () => void
+
 }
 
 export const NavBar = (props:Props) => {
@@ -18,6 +19,8 @@ export const NavBar = (props:Props) => {
     //   AsyncFunction();
     // }
   }, [props.reset]);
+
+  
 
   return (
       <div className="Nav">
