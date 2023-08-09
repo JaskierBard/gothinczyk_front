@@ -7,6 +7,8 @@
   margin: 0;
   padding: 0;
   font-family: gothic_font, sans-serif;
+  user-select: none;
+
 }
 
 body{

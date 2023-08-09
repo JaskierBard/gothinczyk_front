@@ -4,6 +4,7 @@ import { getMoney } from "../../functions/getMoney";
 
 interface Props {
   reset:number
+  show: () => void
 }
 
 export const NavBar = (props:Props) => {
@@ -32,8 +33,7 @@ export const NavBar = (props:Props) => {
 
         
         <section className="hero">
-          <p>Ekwipunek</p>
-          <p>Statystyki</p>
+          <p onClick={props.show}>Statystyki</p>
           <div><img id="coin" src="./images/other/coin_icon.webp"  alt="" />{money}</div>
 
         </section>

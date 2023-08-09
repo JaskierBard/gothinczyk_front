@@ -22,21 +22,21 @@ export const Skills = (props: Props) => {
 
   return (
     <div className="skills">
-      <h2>UMIEJETNOSCI</h2>
+      <h2>UMIEJĘTNOŚCI</h2>
       <div className="names">
-        <p>Br. jednoreczna</p>
-        <p>Br. dwureczna</p>
-        <p>Luki</p>
+        <p>Br. jednoręczna</p>
+        <p>Br. dwuręczna</p>
+        <p>Łuki</p>
         <p>Kusze</p>
         <br />
-        <p>Skradanie sie</p>
-        <p>Wlamywanie sie</p>
-        <p>Kradziez kiesz</p>
+        <p>Skradanie się</p>
+        <p>Wlamywanie się</p>
+        <p>Kradzież kiesz.</p>
         <br />
         <p>Tworzenie run</p>
         <p>Alchemia</p>
         <p>Kowalstwo</p>
-        <p>Zbieranie trofeow</p>
+        <p>Zbieranie trofeów</p>
       </div>
       {props.stats && (
         <div className="values">

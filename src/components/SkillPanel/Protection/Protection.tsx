@@ -10,9 +10,9 @@ export const Protection = (props: Props) => {
     <div className="protection">
       <h2>OCHRONA</h2>
       <div className="names">
-        <p>Bron</p>
+        <p>Broń</p>
         <p>Pociski</p>
-        <p>Smoczy ogien</p>
+        <p>Smoczy ogień</p>
         <p>Magia</p>
       </div>
       <div className="values">

@@ -10,10 +10,10 @@ export const Attributes = (props: Props) => {
     <div className="attributes">
       <h2>ATRYBUTY</h2>
       <div className="names">
-        <p>Sila</p>
-        <p>Zrecznosc</p>
+        <p>Siła</p>
+        <p>Zręczność</p>
         <p>Mana</p>
-        <p>Punkty trafien</p>
+        <p>Punkty trafień</p>
       </div>
       {props.stats && (
         <div className="values">
