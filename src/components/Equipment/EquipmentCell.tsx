@@ -8,10 +8,9 @@ interface Props {
   ceil?: number;
   player_id: string;
   money: number;
-  reset: () => void
-  Click: () => Promise<void>
+  reset: () => void;
+  Click: () => Promise<void>;
 }
-
 
 const weapon = [
   "one_handed two_handed",
@@ -51,20 +50,23 @@ export const EquipmentCell = (props: Props) => {
     eqhtml.style.opacity = 1;
   };
 
-  const handleClick = async(id:string) => {
-    if (props.player_id === 'merchant') {
-      await buyProduct(props.path.price,props.money,id,  props.path.type, props.player_id )
-      Click()
-      props.reset()
+  const handleClick = async (id: string) => {
+    if (props.player_id === "merchant") {
+      await buyProduct(
+        props.path.price,
+        props.money,
+        id,
+        props.path.type,
+        props.player_id
+      );
+      Click();
+      props.reset();
     } else {
-      await sellProduct(props.path.price, props.money, id, props.path.type)
-      Click()
-      props.reset()
-
-
-
+      await sellProduct(props.path.price, props.money, id, props.path.type);
+      Click();
+      props.reset();
     }
-  }
+  };
 
   const Leave = () => {
     const eqhtml: any = document.querySelector(`.img`);
@@ -87,7 +89,9 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
-                onClick={() => {handleClick(props.path.weapon_id)}}
+                onClick={() => {
+                  handleClick(props.path.weapon_id);
+                }}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -100,8 +104,9 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
-                onClick={() => {handleClick(props.path.armor_id)}}
-
+                onClick={() => {
+                  handleClick(props.path.armor_id);
+                }}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -114,8 +119,9 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
-                onClick={() => {handleClick(props.path.magic_id)}}
-
+                onClick={() => {
+                  handleClick(props.path.magic_id);
+                }}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -128,8 +134,9 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
-                onClick={() => {handleClick(props.path.alchemy_id)}}
-
+                onClick={() => {
+                  handleClick(props.path.alchemy_id);
+                }}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>
@@ -142,8 +149,9 @@ export const EquipmentCell = (props: Props) => {
                 alt=""
                 onMouseEnter={Enter}
                 onMouseLeave={Leave}
-                onClick={() => {handleClick(props.path.other_id)}}
-
+                onClick={() => {
+                  handleClick(props.path.other_id);
+                }}
               />
               <p className="quantity">{props.path.quantity}</p>
             </>

@@ -2,7 +2,7 @@ import "./Equipment.css";
 
 interface Props {
   cells: number;
-  character:string;
+  character: string;
 }
 
 export const EmptyCells = (props: Props) => {
@@ -11,7 +11,6 @@ export const EmptyCells = (props: Props) => {
       {Array.from({ length: props.cells }, (value, index) => (
         <div className="cell" key={index} />
       ))}
-    
     </div>
   );
 };

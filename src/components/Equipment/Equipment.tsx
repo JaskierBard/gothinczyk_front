@@ -9,7 +9,7 @@ interface Props {
   player_id: string;
   character: string;
   counter: number;
-  reset: () => void
+  reset: () => void;
 }
 
 export const Equipment = (props: Props) => {
@@ -18,7 +18,7 @@ export const Equipment = (props: Props) => {
   const [value, setValue] = useState<number>(0);
   const [current, setCurrent] = useState<any>();
   const [money, setMoney] = useState<any>(null);
-  const {reset} = props
+  const { reset } = props;
   useEffect(() => {
     const AsyncFunction = async () => {
       setMoney(getMoney(items));
@@ -65,10 +65,11 @@ export const Equipment = (props: Props) => {
   } else {
     return (
       <div className={props.character} onWheel={MouseWheelDetector}>
-
         {current.map((element2: any) => (
           <EquipmentCell
-            Click={async() => {setItems(await getItems(props.player_id))}}
+            Click={async () => {
+              setItems(await getItems(props.player_id));
+            }}
             reset={reset}
             key={element2.img}
             path={element2}
@@ -80,7 +81,6 @@ export const Equipment = (props: Props) => {
         {Array.from({ length: cells }, (value, index) => (
           <div className="cell" key={index}></div>
         ))}
- 
       </div>
     );
   }
