@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Equipment.css";
 import { getItems } from "../../functions/getEquipment";
 import { EquipmentCell } from "./EquipmentCell";
-import { getStats } from "../../functions/getStatistic";
 import { Pagination } from "../../functions/pagination";
 import { EmptyCells } from "./EmptyCells";
 import { getMoney } from "../../functions/getMoney";
@@ -31,9 +30,7 @@ export const Equipment = (props: Props) => {
 
   useEffect(() => {
     const AsyncFunction = async () => {
-      // setItems(null);
       setItems(await getItems(props.player_id));
-      // console.log(reset)
     };
     AsyncFunction();
   }, [props.counter]);
@@ -83,15 +80,17 @@ export const Equipment = (props: Props) => {
         {Array.from({ length: cells }, (value, index) => (
           <div className="cell" key={index}></div>
         ))}
-        <div className="showItem">
-          <p className="name"></p>
-          <p className="price"></p>
-          <img
-            className={"img"}
-            style={{ opacity: 0, width: 100, height: 100 }}
-            alt="img"
-          />
-        </div>
+       {props.player_id !== "merchant" ? (
+  <div className="showItem">
+    <p className="name"></p>
+    <p className="price"></p>
+    <img
+      className={"img"}
+      style={{ opacity: 0, width: 100, height: 100 }}
+      alt="img"
+    />
+  </div>
+) : null}
       </div>
     );
   }
