@@ -6,9 +6,10 @@ import { NPC } from "./components/NPC/NPC";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Codes } from "./components/CodesBar/CodesBar";
 import { Console } from "./components/common/Console/Console";
-import { Bars } from "./components/common/Bars/Bars";
+import { HpBar } from "./components/common/Bars/HpBar";
 import { Background } from "./components/Board/Board";
 import { EquipmentShowItem } from "./components/Equipment/EquipmentShowItem";
+import { ManaBar } from "./components/common/Bars/ManaBar";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -56,7 +57,8 @@ const App = () => {
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
       <EquipmentShowItem/>
       <NPC name={'Zuris'} reset={resetCounter} counter={reset}/>
-      <Bars/>
+      <HpBar/>
+      <ManaBar/>
       
 
     </>
