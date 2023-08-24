@@ -54,7 +54,7 @@ export const NPC = (props: Props) => {
       <div className="npc" >
         <NPCView name={props.name} />
 
-        <img src={`./Npc/${props.name}.jpg`} alt="" style={{opacity:0.3}} />
+        <img src={`./Npc/${props.name}.jpg`} alt="" style={{opacity:0.5}} />
         <Equipment
           player_id="merchant"
           character="merchant_goods"

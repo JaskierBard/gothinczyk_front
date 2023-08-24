@@ -80,17 +80,7 @@ export const Equipment = (props: Props) => {
         {Array.from({ length: cells }, (value, index) => (
           <div className="cell" key={index}></div>
         ))}
-       {props.player_id !== "merchant" ? (
-  <div className="showItem">
-    <p className="name"></p>
-    <p className="price"></p>
-    <img
-      className={"img"}
-      style={{ opacity: 0, width: 100, height: 100 }}
-      alt="img"
-    />
-  </div>
-) : null}
+ 
       </div>
     );
   }

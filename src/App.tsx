@@ -8,6 +8,7 @@ import { Codes } from "./components/CodesBar/CodesBar";
 import { Console } from "./components/common/Console/Console";
 import { Bars } from "./components/common/Bars/Bars";
 import { Background } from "./components/Board/Board";
+import { EquipmentShowItem } from "./components/Equipment/EquipmentShowItem";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -53,6 +54,7 @@ const App = () => {
       
     {showSkillPanel ? <SkillPanel /> : null}
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
+      <EquipmentShowItem/>
       <NPC name={'Zuris'} reset={resetCounter} counter={reset}/>
       <Bars/>
       
