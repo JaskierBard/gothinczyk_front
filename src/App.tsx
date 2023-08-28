@@ -10,13 +10,14 @@ import { HpBar } from "./components/common/Bars/HpBar";
 import { Background } from "./components/Board/Board";
 import { EquipmentShowItem } from "./components/Equipment/EquipmentShowItem";
 import { ManaBar } from "./components/common/Bars/ManaBar";
+import { Enemy } from "./components/Enemy/Enemy";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
 const App = () => {
 
   const [showSkillPanel, setShowSkillPanel] = useState<boolean>(false);
-  const [showCodes, setShowCodes] = useState<boolean>(true);
+  const [showCodes, setShowCodes] = useState<boolean>(false);
 
 
   const [reset, setReset] = useState<number>(0);
@@ -56,8 +57,10 @@ const App = () => {
     {showSkillPanel ? <SkillPanel /> : null}
       <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
       <EquipmentShowItem/>
-      <NPC name={'Zuris'} reset={resetCounter} counter={reset}/>
-      <HpBar/>
+      {/* <NPC name={'Zuris'} reset={resetCounter} counter={reset}/> */}
+      <Enemy/>
+
+      <HpBar left={`1450px`} top={`870px`}/>
       <ManaBar/>
       
 

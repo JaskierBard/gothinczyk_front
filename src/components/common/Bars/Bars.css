@@ -25,8 +25,7 @@ progress::-webkit-progress-bar {
     max-width: 190px;
     height: 20px;
     position: fixed;
-    bottom: 15px;
-    right: 300px;
+    z-index: 10000;
 }
 
 .bar_mg {
@@ -35,8 +34,8 @@ progress::-webkit-progress-bar {
     max-width: 190px;
     height: 20px;
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+    left: 1700px;
+    top: 870px;
 
 
 }
