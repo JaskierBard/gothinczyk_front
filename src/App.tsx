@@ -55,10 +55,10 @@ const App = () => {
     
       
     {showSkillPanel ? <SkillPanel /> : null}
-      <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
-      <EquipmentShowItem/>
+      {/* <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/> */}
+      {/* <EquipmentShowItem/> */}
       {/* <NPC name={'Zuris'} reset={resetCounter} counter={reset}/> */}
-      <Enemy/>
+      {/* <Enemy/> */}
 
       <HpBar left={`1450px`} top={`870px`}/>
       <ManaBar/>

@@ -3,6 +3,7 @@ import "./Bars.css";
 import { getStats } from "../../../functions/getStatistic";
 
 interface Props {
+  // creature: string
   left: string
   top: string
 }

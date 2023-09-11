@@ -42,6 +42,7 @@ body {
     height: 85vh;
     width: 85vh;
     font-size: 0;
+    
 }
 
 .bgc>div>div {
@@ -51,6 +52,16 @@ body {
     width: 7.5vh;
     height: 7.5vh;
     border-radius: 20%;
+    
+}
+
+.bgc>div>div>img {
+    width: 7.5vh;
+    height: 7.5vh;
+        border-radius: 20%;
+            margin: 1px;
+
+
 }
 
 
@@ -61,7 +72,11 @@ body {
     cursor: pointer;
 }
 
-
+.grass{
+    background-image: url('../../../public/images/plates/grass.webp');
+background-size: contain;
+background-position: center;
+}
 
 .redPlate, .redFinish{
 background-image: url('../../../public/images/plates/redPlate.webp');
