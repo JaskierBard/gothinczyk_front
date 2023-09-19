@@ -49,9 +49,9 @@ const App = () => {
     <>
     {showCodes ? <Codes /> : null}
 
-    <Background rollResult={10} turn={"Blue"}/>
+    <Background/>
     <NavBar reset={reset} show={show} />
-    <Console/>
+    {/* <Console/> */}
     
       
     {showSkillPanel ? <SkillPanel /> : null}
@@ -60,8 +60,8 @@ const App = () => {
       {/* <NPC name={'Zuris'} reset={resetCounter} counter={reset}/> */}
       {/* <Enemy/> */}
 
-      <HpBar left={`1450px`} top={`870px`}/>
-      <ManaBar/>
+      {/* <HpBar left={`1450px`} top={`870px`}/>
+      <ManaBar/> */}
       
 
     </>

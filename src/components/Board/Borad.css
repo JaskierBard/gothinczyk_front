@@ -3,160 +3,53 @@ html{
     padding: 0;
 }
 
-body {
-    /* background-image: url('../../../public/images/background/jarkendar_background.jpg'); */
-    background-size: cover;
-}
-
-/* .shadow {
-    position: absolute;
-
-    width: 96vw;
-    height: 99vh;
-    background-color: rgba(165, 2, 2, 0.39);
-    left: 2vw;
-    z-index: -3;
-
-} */
 
 .background {
     position: absolute;
-    /* background-color: #32329e; */
     background-image: url('../../../public/images/background/letter.png');
     background-size: cover;
     background-repeat: no-repeat;
-    top: 1vh;
+    top: 3vh;
     width: 99vh;
     height: 99vh;
     left: 29vw;
     z-index: -1;
+    background-color: rgb(37, 37, 37);
+    
 }
 
 
 
 
-.bgc>div {
+.bgc {
     position: absolute;
-    margin-left: 32vw; 
-    margin-top: 9vh; 
-    height: 85vh;
-    width: 85vh;
-    font-size: 0;
+    margin-left: 4vw; 
+    margin-top: 9vh;
+    height: 83.5vh;
+    width: 83.5vh;
+    display: grid;
+    grid-template-rows: repeat(11, 7.5vh);
+    grid-template-columns: repeat(11, 7.5vh);
+    gap: 1px;
+    grid-template-areas:
+    "a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11"
+    "a12 a86 a86 a86 a13 a14 a15 a87 a87 a87 a16"
+    "a17 a86 a86 a86 a18 a19 a20 a87 a87 a87 a21"
+    "a22 a86 a86 a86 a23 a24 a25 a87 a87 a87 a26"
+    "a27 a28 a29 a30 a31 a32 a33 a34 a35 a36 a37"
+    "a38 a39 a40 a41 a42 a43 a44 a45 a46 a47 a48"
+    "a49 a50 a51 a52 a53 a54 a55 a56 a57 a58 a59"
+    "a60 a88 a88 a88 a61 a62 a63 a89 a89 a89 a64"
+    "a65 a88 a88 a88 a66 a67 a68 a89 a89 a89 a69"
+    "a70 a88 a88 a88 a71 a72 a73 a89 a89 a89 a74"
+    "a75 a76 a77 a78 a79 a80 a81 a82 a83 a84 a85"
+    ;
     
-}
-
-.bgc>div>div {
-    box-sizing: border-box;
-    display: inline-block;
-    margin: 1px;
-    width: 7.5vh;
-    height: 7.5vh;
-    border-radius: 20%;
-    
-}
-
-.bgc>div>div>img {
-    width: 7.5vh;
-    height: 7.5vh;
-        border-radius: 20%;
-            margin: 1px;
-
-
-}
-
-
-
-
-.area{
-    background-color: rgb(118, 146, 95);
-    cursor: pointer;
 }
 
 .grass{
     background-image: url('../../../public/images/plates/grass.webp');
-background-size: contain;
-background-position: center;
+    background-size: contain;
+   border-radius: 20%;
+
 }
-
-.redPlate, .redFinish{
-background-image: url('../../../public/images/plates/redPlate.webp');
-background-size: cover;
-background-position: center;
-}
-
-.bluePlate, .blueFinish{
-    background-image: url('../../../public/images/plates/bluePlate.webp');
-    background-size: cover;
-    background-position: center;
-}
-
-.greenPlate, .greenFinish{
-    background-image: url('../../../public/images/plates/greenPlate.webp');
-    background-size: cover;
-    background-position: center;
-}
-
-.yellowPlate, .yellowFinish{
-    background-image: url('../../../public/images/plates/yellowPlate.webp');
-    background-size: cover;
-    background-position: center;
-}
-
-.redArea{
-    background-color: rgb(145, 74, 74);
-}
-
-.blueArea{
-    background-color: #32329e;
-}
-
-.greenArea{
-    background-color: rgb(53, 141, 53);
-}
-
-.yellowArea{
-    background-color: #9c9c36;
-}
-
-
-
-.blue_pawn {
-    background-image:url('../../../public/images/pawns/pawnBlue.png');
-    background-size:cover;
-    background-position: center;
- }
- .red_pawn {
-     background-image:url('../../../public/images/pawns/pawnRed.png');
-     background-size: cover;
-    background-position: center;
-  }
-  .green_pawn {
-     background-image:url('../../../public/images/pawns/pawnGreen.png');
-     background-size: cover;
-    background-position: center;
-  }
-  .yellow_pawn { 
-    background-size: cover;
-    background-position: center;
-    content: url('../../../public/images/pawns/pawnYellow.png');
-    
-  }
-
-  .fight_pawn {
-    background-size: cover;
-    background-position: center;
-    content: url('../../../public/images/pawns/pawnFight.png');
-
-  }
-
-  /* .multiple {
-    background-image: url('./assets/pawns/pawnRed.png'), url('./assets/pawns/pawnGreen.png');
-
-    background-size: 50% 50%;
-
-    background-position: left bottom, left top;
-    background-repeat: no-repeat, no-repeat;
-    padding: 15px;
-  } */
-
-

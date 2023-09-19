@@ -1,69 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { Spinner } from '../common/Spinner/Spinner';
-import { board, nboard } from './BoardMaker';
-import './Borad.css';
+import React, { useEffect, useState } from "react";
+import { Spinner } from "../common/Spinner/Spinner";
+import "./Borad.css";
 
-interface Props {
-    rollResult: number
-    turn: string
-  }
-  const updatedBoard = [...board];
+export const Background = () => {
+  const [allEvents, setAllEvents] = useState<any>();
+  const [boardFinal, setBoardFinal] = useState<any>();
 
-export const Background = (props: Props) => {
-    const [allEvents, setAllEvents]= useState<any>();
+  const events = async () => {
+    const res = await fetch(`http://localhost:3001/board`);
+    const zmienna = await res.json();
+    setBoardFinal(zmienna.events);
+  };
 
-
-    // const [boardd, setBoardd] = useState<string[] >(board)
-    const [boardFinal, setBoardFinal] = useState<any >([...board])
-
-
-  
-
-    const events = async() => {
-        const res = await fetch(`http://localhost:3001/board`);
-        const zmienna = await res.json()
-        zmienna.events.forEach((obj:any) => {
-          if (obj.position >= 0 && obj.position < updatedBoard.length) {
-            updatedBoard[obj.position] = obj.img;
-          }
-        });
-        setBoardFinal(updatedBoard)
-    };
- 
- 
-    
-    useEffect(() => {
-        events()
-    },[]);
-
-   
-
+  useEffect(() => {
+    events();
+  }, []);
 
   return (
-     <>
-    <div className='shadow'>
-    </div> 
-     <section className='background'>
-    </section>
-     <div className='bgc'>
-     <div>
-  {
-    nboard.map((item:any, index) => {
-      // console.log(Object.values(item)[0]);
+    <>
+      <section className="background">
+        <div className="bgc">
+          {/* <div className="space" style={{top:'7.6vh', left:'7.6vh'}}></div>
+          <div className="space" style={{top:'7.6vh', right:'7.6vh'}}></div>
+          <div className="space" style={{bottom:'7.6vh', left:'7.6vh'}}></div>
+          <div className="space" style={{bottom:'7.6vh', right:'7.6vh'}}></div> */}
 
-      return (
-        <div key={index} className={String(Object.values(item)[0])}>
-          {String(Object.values(item)[0]) !== 'none' ? <img className='' src={`./enemy/${String(Object.values(item)[0])}.webp`} alt="" /> : null}
+{boardFinal ? (
+  boardFinal.map((item: any, index: any) => {
+    console.log(index);
+    return <div key={index} className={item.type} style={{gridArea:`${'a' +item.lp}`}}></div>;
+  })
+) : (
+  <p>Tablica boardFinal nie istnieje lub jest pusta</p>
+)}
         </div>
-      );
-    })
-  }
-</div>
-     </div>
-     </>
-    
-  )
-}
-
-
-
+      </section>
+    </>
+  );
+};
