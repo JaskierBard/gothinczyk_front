@@ -47,8 +47,8 @@ html{
     
 }
 
-.grass{
-    background-image: url('../../../public/images/plates/grass.webp');
+.base{
+    /* background-image: url('../../../public/images/plates/grass.webp'); */
     background-size: contain;
    border-radius: 20%;
 
