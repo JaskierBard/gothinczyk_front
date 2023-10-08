@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "../common/Spinner/Spinner";
 import "./Borad.css";
+import { directionChoice } from "../../functions/directionChoice";
 
 export const Background = () => {
   const [allEvents, setAllEvents] = useState<any>();
@@ -24,18 +25,14 @@ export const Background = () => {
 {boardFinal ? (
   boardFinal.map((item: any, index: any) => {
     if (item.enemyImg !== '') {
-      console.log(item.enemyImg)
       const style = {
         gridArea: `a${item.lp}`,
         backgroundImage: `url("./enemy/${item.enemyImg}.webp")`
       };
       return <div key={index} className='base' style={style}></div>;
-    } else if (item.base === 'grass'){
-      const style = {
-        gridArea: `a${item.lp}`,
-        backgroundImage: `url("./images/plates/grass.webp")`
-      };
-      return <div key={index} className='base' style={style}></div>;
+    } else if (item.base !== 'space'){
+      return <div key={index} className='base' style={directionChoice(item.lp, item.base)}></div>;
+
     } else {
       const style = {
         gridArea: `a${item.lp}`,
@@ -46,7 +43,7 @@ export const Background = () => {
     
   })
 ) : (
-  <p>Tablica boardFinal nie istnieje lub jest pusta</p>
+  <Spinner/>
 )}
         </div>
       </section>

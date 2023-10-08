@@ -48,8 +48,8 @@ html{
 }
 
 .base{
-    /* background-image: url('../../../public/images/plates/grass.webp'); */
-    background-size: contain;
-   border-radius: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20%;
 
 }
