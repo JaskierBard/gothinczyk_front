@@ -6,8 +6,6 @@ export const directionChoice = (lp: number, base:string) => {
     transform: `rotate(0deg)`,
   };
   if (lp === 27) {
-    console.log("ahoj");
-
     style = {
       gridArea: `a${lp}`,
       backgroundImage: `url("./images/plates/direction.png")`,
