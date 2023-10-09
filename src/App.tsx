@@ -53,7 +53,7 @@ const App = () => {
     <NavBar reset={reset} show={show} />
     {/* <Console/> */}
     
-      
+    {/* <EnemyInfo/> */}
     {showSkillPanel ? <SkillPanel /> : null}
       {/* <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/> */}
       {/* <EquipmentShowItem/> */}

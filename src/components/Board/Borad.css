@@ -53,3 +53,7 @@ html{
     border-radius: 20%;
 
 }
+
+.active{
+    cursor: pointer;
+}

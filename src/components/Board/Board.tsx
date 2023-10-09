@@ -5,13 +5,24 @@ import { directionChoice } from "../../functions/directionChoice";
 import { getEnemyInfo } from "../../functions/getEnemyInfo";
 
 export const Background = () => {
-  const [allEvents, setAllEvents] = useState<any>();
+  const [position, setPosition] = useState<any>({ x: 200, y: 200 });
+  const [hover, setHover] = useState<any>([]);
+
   const [boardFinal, setBoardFinal] = useState<any>();
+
 
   const events = async () => {
     const res = await fetch(`http://localhost:3001/board`);
     const zmienna = await res.json();
     setBoardFinal(zmienna.events);
+  };
+
+  const handleMouseMove = (e: any) => {
+    setPosition({ x: e.clientX - 350, y: e.clientY - 20 });
+  };
+
+  const onMouseClick = async (enemyId: any) => {
+    setHover(await getEnemyInfo(enemyId));
   };
 
   useEffect(() => {
@@ -20,7 +31,7 @@ export const Background = () => {
 
   return (
     <>
-      <section className="background">
+      <section className="background" onMouseMove={handleMouseMove}>
         <div className="bgc">
           {boardFinal ? (
             boardFinal.map((item: any, index: any) => {
@@ -32,8 +43,9 @@ export const Background = () => {
                 return (
                   <div
                     key={index}
-                    className="base"
-                    onClick={() => getEnemyInfo(item.enemyId)}
+                    // onMouseEnter={()=>onMouseEnter(item)}
+                    className="base active"
+                    onClick={() => onMouseClick(item.enemyId)}
                     style={style}
                   ></div>
                 );
@@ -55,6 +67,50 @@ export const Background = () => {
           ) : (
             <Spinner />
           )}
+        </div>
+
+        <div
+          style={{
+            width: "220px",
+            borderRadius: "3%",
+            position: "absolute",
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+            height: "200px",
+            backgroundImage: `url("./enemy/${hover.img}.webp")`,
+            backgroundSize: "cover",
+          }}
+        >
+          <p style={{ backgroundColor: "rgba(0,0,0,80%)", color: "gold" }}>
+            {hover.name}
+          </p>
+          <table style={{ backgroundColor: "rgba(0,0,0,80%)", color: "gold" }}>
+            <thead>
+              <br />
+              <tr>
+                <th>Obrona</th>
+              </tr>
+              <br />
+            </thead>
+            <tbody>
+              <tr>
+                <td>Broń</td>
+                <td>{hover.def_weapon}</td>
+              </tr>
+              <tr>
+                <td>Łuki</td>
+                <td>{hover.def_bow}</td>
+              </tr>
+              <tr>
+                <td>Ogień</td>
+                <td>{hover.def_fire}</td>
+              </tr>
+              <tr>
+                <td>Magia</td>
+                <td>{hover.def_magic}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </>
