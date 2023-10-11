@@ -3,6 +3,7 @@ import { Spinner } from "../common/Spinner/Spinner";
 import "./Borad.css";
 import { directionChoice } from "../../functions/directionChoice";
 import { getEnemyInfo } from "../../functions/getEnemyInfo";
+import { HpBar } from "../common/Bars/HpBar";
 
 export const Background = () => {
   const [position, setPosition] = useState<any>({ x: 200, y: 200 });
@@ -18,7 +19,7 @@ export const Background = () => {
   };
 
   const handleMouseMove = (e: any) => {
-    setPosition({ x: e.clientX - 350, y: e.clientY - 20 });
+    setPosition({ x: e.clientX, y: e.clientY});
   };
 
   const onMouseEnter = async (enemyId: any) => {
@@ -76,7 +77,7 @@ export const Background = () => {
               width: "220px",
               borderRadius: "3%",
               position: "absolute",
-              left: `${position.x}px`,
+              left: `${position.x-550}px`,
               top: `${position.y}px`,
               height: "200px",
               backgroundImage: `url("./enemy/${hover.img}.webp")`,
@@ -114,6 +115,7 @@ export const Background = () => {
                 </tr>
               </tbody>
             </table>
+            <HpBar left={`${position.x+25}px`} top={`${position.y+200}px`}/>
           </div>
         )}
       </section>
