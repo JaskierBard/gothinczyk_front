@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Equipment } from "./components/Equipment/Equipment";
 import { SkillPanel } from "./components/SkillPanel/SkillPanel";
-import { NPC } from "./components/NPC/NPC";
+import { Map } from "./components/Map/Map";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Codes } from "./components/CodesBar/CodesBar";
 import { Console } from "./components/common/Console/Console";
@@ -49,14 +49,15 @@ const App = () => {
     <>
     {showCodes ? <Codes /> : null}
 
-    <Background/>
-    <NavBar reset={reset} show={show} />
+    {/* <Background/> */}
+    <Map/>
+    {/* <NavBar reset={reset} show={show} /> */}
     {/* <Console/> */}
     
     {/* <EnemyInfo/> */}
     {showSkillPanel ? <SkillPanel /> : null}
-      {/* <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/> */}
-      {/* <EquipmentShowItem/> */}
+      {/* <Equipment player_id={player_id} character="equipment" reset={resetCounter} counter={reset}/>
+      <EquipmentShowItem/> */}
       {/* <NPC name={'Zuris'} reset={resetCounter} counter={reset}/> */}
       {/* <Enemy/> */}
 

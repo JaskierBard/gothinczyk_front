@@ -1,0 +1,12 @@
+.frame{
+    margin-top: 40px;
+    margin-left: 400px;
+    width: 1200px;
+    height: 800px;
+    border: 2px solid gold;
+    z-index: -3;
+    background-image: url('../../../public/images/background/khorinis.webp');
+    background-repeat: no-repeat;
+    
+
+} 
