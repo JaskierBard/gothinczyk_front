@@ -1,0 +1,53 @@
+.reflection {
+  display: grid;
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.lens-center {
+  position: relative;
+  width: 70px;
+  border-radius: 100%;
+  top: -24px;
+  left: 170px ;
+  background: radial-gradient(
+    closest-side circle at center,
+    hsl(4 5% 100% / 100%) 0%,
+    hsl(4 5% 100% / 100%) 15%,
+    hsl(4 10% 70% / 70%) 30%,
+    hsl(4 0% 50% / 30%) 55%,
+    hsl(4 0% 10% / 5%) 75%,
+    transparent 99%
+  );
+  filter: blur(4px);
+  transition: transform 0.5s;
+}
+
+.lens-center:hover {
+    transform: translate(18px, -9px);
+}
+
+.full-flare {
+    position: relative;
+  background: radial-gradient(
+    closest-side ellipse at  center,
+    hsl(4 20% 90% / 80%) 5%,
+    hsl(4 10% 70% / 30%) 20%,
+    transparent 45%
+  );
+  top: 277px ;
+  left: -45px;
+  filter: blur(15px);
+  transition: transform 0.5s;
+
+}
+
+.full-flare:hover {
+    transform: translate(18px, -9px);
+    filter: blur(25px);
+
+}
+

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.add{
+    position: absolute;
+    box-sizing: border-box;
+    display: inline-block;
+    top: 690px;
+    left: 30px;
+
+
+
+}
+
+.add > button {
+    border: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(110, 110, 61);
+    border: 1px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

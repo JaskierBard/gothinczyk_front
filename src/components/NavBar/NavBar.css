@@ -1,0 +1,84 @@
+.Nav{
+    width: 100%;
+    /* height: 40px; */
+    background-color: rgb(42, 73, 36);
+    border-bottom: 1px solid black;
+    
+}
+.action{
+    position: absolute;
+    display: flex;
+    width: 30vw;
+    background-color: rgba(255, 0, 200, 0.144);
+}
+
+.action>p{
+    padding: 5px 15px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(107, 107, 107);
+
+}
+
+.game{
+    position: absolute;
+    display: flex;
+    width: 40vw;
+    left: 30vw;
+    background-color: rgba(255, 251, 0, 0.144);
+}
+
+.game>p{
+    padding: 5px 15px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(107, 107, 107);
+
+}
+
+.hero{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    width: 30vw;
+    background-color: rgba(0, 255, 255, 0.144);
+
+}
+.hero>p{
+    padding: 5px 15px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(107, 107, 107);
+
+}
+
+.hero>p:hover {
+    border: 1px solid rgb(154, 170, 11);
+
+}
+
+.hero> div{
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 5px;
+    font-size: 30px;
+    padding-right: 5px ;
+
+
+}
+
+
+
+ #coin{
+    padding-top: 5px;
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,17 @@
+.Console{
+    width: 28vw;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.438);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.input{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 26vw;
+    background-color: rgba(0, 0, 0, 0.61);
+    color: #cfcfcf;
+}

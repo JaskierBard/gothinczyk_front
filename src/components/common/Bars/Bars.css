@@ -1,0 +1,41 @@
+
+
+progress {
+    border-radius: 0px; 
+    width: 10rem;
+    height: 0.75rem;
+    margin-left: 10px;
+    }
+
+progress::-webkit-progress-bar {
+    background-image: url('../../../../public/images/bars/dark.png');
+}
+
+.bar_hp progress::-webkit-progress-value {
+    background-image: url('../../../../public/images/bars/liquid.png');
+}
+
+.bar_mg progress::-webkit-progress-value {
+    background-image: url('../../../../public/images/bars/liquid_blue.png');
+}
+
+.bar_hp {
+    background-image: url('../../../../public/images/bars/hp.png');
+    width: 180px;
+    max-width: 190px;
+    height: 20px;
+    position: fixed;
+    z-index: 10000;
+}
+
+.bar_mg {
+    background-image: url('../../../../public/images/bars/mana.png');
+    width: 180px;
+    max-width: 190px;
+    height: 20px;
+    position: fixed;
+    left: 1700px;
+    top: 870px;
+
+
+}

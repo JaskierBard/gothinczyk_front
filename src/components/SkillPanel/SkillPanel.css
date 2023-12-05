@@ -1,0 +1,86 @@
+
+.stats {
+    background-color: rgba(0, 0, 0, 0.863);
+    position: absolute;
+    margin-left: 32vw;
+    margin-top: 15vh;
+
+    width: 800px;
+    color: wheat;
+    border: 1px solid rgba(255, 255, 0, 0.534);
+    border-radius: 3px;
+    box-shadow: 0 0  3px rgba(255, 255, 0, 0.534);
+
+}
+
+.stats_bgc {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 0, 0.534);
+    width: 810px;
+    margin-top: 0.5%;
+    margin-left: -8px;
+    height: 98%;
+    box-shadow: 0 0  3px rgba(255, 255, 0, 0.534);
+
+}
+.character, .attributes, .protection, .skills {
+    box-sizing: border-box;
+    margin: 30px;
+    width: 43%;
+    border: 1px solid rgba(255, 255, 0, 0.534);
+    
+}
+
+
+h2 {
+    background-color: rgb(27, 27, 27);
+    margin-top: -15px;
+    margin-left: 14%;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 0, 0.534);
+    width: 230px;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    /* margin-bottom: 10px; */
+}
+
+.skills {
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    width: 50%;
+    display: inline-block;
+}
+
+ p {
+    margin-left: 5px;
+    padding: 1px;
+    font-family: gothic_font, sans-serif;
+} 
+
+.names {
+    display: inline-block;
+    padding: 4px;
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+
+
+}
+
+.values {
+    padding: 4px;
+    display: inline-block;
+}
+
+.percent {
+    width: 16%;
+    padding: 2px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
