@@ -1,12 +1,13 @@
 .frame{
     margin-top: 40px;
-    margin-left: 400px;
-    width: 1200px;
+    margin-left: 25vw;
+    width: 50vw;
     height: 800px;
-    border: 2px solid gold;
-    z-index: -3;
-    background-image: url('../../../public/images/background/khorinis.webp');
+    border: 2px solid rgb(27, 26, 18);
+    /* z-index: -3; */
+    background-image: url('../../../public/images/background/khorinis.png');
     background-repeat: no-repeat;
+    /* box-shadow:inset 0px 15px 8px -10px #9c2d2d; */
     
 
 } 

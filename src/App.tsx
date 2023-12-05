@@ -11,6 +11,7 @@ import { Background } from "./components/Board/Board";
 import { EquipmentShowItem } from "./components/Equipment/EquipmentShowItem";
 import { ManaBar } from "./components/common/Bars/ManaBar";
 import { Enemy } from "./components/Enemy/Enemy";
+import { NPC } from "./components/NPC/NPC";
 
 const player_id = '865055da-1b49-11ee-af61-581122ba8110'
 
@@ -50,8 +51,8 @@ const App = () => {
     {showCodes ? <Codes /> : null}
 
     {/* <Background/> */}
-    <Map/>
-    {/* <NavBar reset={reset} show={show} /> */}
+    {/* <Map/> */}
+    <NavBar reset={reset} show={show} />
     {/* <Console/> */}
     
     {/* <EnemyInfo/> */}

@@ -23,11 +23,7 @@ export const Background = () => {
     setHide(true);
   };
 
-  const clickPosition = (e: any) => {
-    console.log(e.clientX)
-    console.log(e.clientY)
 
-  }
 
   useEffect(() => {
     events();
